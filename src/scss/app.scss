@@ -1,0 +1,66 @@
+//----------------------------------------------   
+//  Main Styling Build
+//  
+//  Tools:      Configs, variables, extends, mixins
+//  Base:       Styles for base level elements
+//  Vendor:     Vendor specific styles
+//  Regions:    Main layouts
+//  Components: Modular components -> Most styles
+//  Utils:      Helper classes, utilities, animations
+//---------------------------------------------- 
+
+//----------------------------------------------
+// Tools: Main Config & Global Variables
+//---------------------------------------------- 
+@import 'tools/_config';
+
+//----------------------------------------------
+// Tools: Mixins
+//---------------------------------------------- 
+@import 'tools/_mixins-animations';
+@import 'tools/_mixins-grid';
+@import 'tools/_mixins-type';
+@import 'tools/_mixins';
+
+//----------------------------------------------
+// Tools: Extends
+//---------------------------------------------- 
+@import 'tools/_extends-type';
+@import 'tools/_extends';
+
+//----------------------------------------------
+// Vendor: Normalize
+//---------------------------------------------- 
+@import 'vendor/_normalize';
+@import 'base/_normalizer';
+
+//----------------------------------------------   
+// Base
+//---------------------------------------------- 
+@import 'base/_links';
+@import 'base/_lists';
+@import 'base/_media';
+@import 'base/_typography';
+
+//----------------------------------------------   
+// Vendor
+//----------------------------------------------  
+
+//----------------------------------------------
+// Regions
+//---------------------------------------------- 
+@import 'regions/_footer';
+
+//----------------------------------------------   
+// Components
+//---------------------------------------------- 
+
+//----------------------------------------------   
+// Utils
+//---------------------------------------------- 
+@import 'utils/_animations-keyframes';
+@import 'utils/_decor';
+@import 'utils/_helpers-colors';
+@import 'utils/_helpers-grid'; 
+@import 'utils/_helpers';
+@import 'utils/_page-transitions';

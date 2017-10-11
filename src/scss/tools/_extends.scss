@@ -1,0 +1,61 @@
+//----------------------------------------------
+// Flex Center
+//----------------------------------------------
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//----------------------------------------------
+// Auto Margin
+//----------------------------------------------
+%auto-margin {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+//----------------------------------------------
+// Box Shadow
+//---------------------------------------------- 
+%box-shadow {
+  box-shadow: 0 1px 1px rgba($color-black, 0.1);
+}
+
+//----------------------------------------------
+// Card Box Shadow with Hover
+//---------------------------------------------- 
+%card-shadow {
+  @extend %box-shadow;
+  
+  position: relative;
+
+  background-clip: padding-box;
+  transform: translate3d(0, 0, 0);
+  transition: all 1s ease;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-clip: padding-box;
+    box-shadow: 0 2px 50px rgba($color-black, 0.25);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 47px rgba($color-black, 0.1);
+    transform: translate3d(0, -0.5em, 0);
+    transition: all 1s ease;
+
+    &:after {
+      opacity: 1;
+    }
+  }
+}

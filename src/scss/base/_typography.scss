@@ -1,0 +1,149 @@
+//----------------------------------------------
+// Base typography
+//---------------------------------------------- 
+body {
+  font-family: $font-body;
+  line-height: $base-lineheight;
+  color: $color-black;
+  background-color: $color-white;
+}
+
+//----------------------------------------------
+// Fluid body sizing
+//---------------------------------------------- 
+body {
+  font-size: 100%;
+  
+  @media (min-width: $mq-small) {
+    font-size: 102.5%;
+  }
+  @media (min-width: $mq-med) {
+    font-size: 105%;
+  }
+  @media (min-width: $mq-large) {
+    font-size: 107.5%;
+  }
+  @media (min-width: 75em) {
+    font-size: 110%;
+  }
+  @media (min-width: $mq-xlarge) {
+    font-size: 115%;
+  }
+  @media (min-width: $mq-xxlarge) {
+    font-size: 120%;
+  }
+  @media (min-width: $mq-xxxlarge) {
+    font-size: 125%;
+  }
+}
+
+//----------------------------------------------
+// Headings
+//---------------------------------------------- 
+h1, h2, h3, h4, h5, h6 {
+  margin: {
+    top: 0;
+    bottom: 0;
+  }
+
+  font-family: $font-header;
+  font-weight: 400;
+}
+
+//----------------------------------------------
+// H1 theme
+//---------------------------------------------- 
+h1, %font-h1 {
+  $fontSize: 3em;
+
+  margin-bottom: 0.25em;
+  
+  font-size: $fontSize - 1em; 
+  line-height: 1.1;
+
+  @media (min-width: $mq-med) {
+    font-size: $fontSize;  
+  }
+
+  @media (min-width: $mq-xlarge) {
+    font-size: $fontSize + 0.25em;
+  }
+}
+
+//----------------------------------------------
+// H2 theme
+//---------------------------------------------- 
+h2, %font-h2 {
+  $fontSize: 2em;
+  
+  font-size: $fontSize;  
+  line-height: 1.1;
+
+  @media (min-width: $mq-xlarge) {
+    font-size: $fontSize + 0.25em;
+  }
+}
+
+//----------------------------------------------
+// H3 theme
+//---------------------------------------------- 
+h3, %font-h3 {
+  $fontSize: 1.25em;
+
+  margin-bottom: 0.25em;
+  
+  font-size: $fontSize;  
+  line-height: 1.1;
+
+  @media (min-width: $mq-xlarge) {
+    font-size: $fontSize + 0.25em;
+  }
+}
+
+//----------------------------------------------
+// H4 theme
+//---------------------------------------------- 
+h4, %font-h4 {
+  $fontSize: 1.25em; 
+
+  margin-bottom: 0.5em;
+  
+  font-size: $fontSize;  
+  font-weight: 400;
+  line-height: 1.4;
+
+  @media (min-width: $mq-xlarge) {
+   font-size: $fontSize + 0.25em;
+  }
+}
+
+//----------------------------------------------
+// H5 theme
+//---------------------------------------------- 
+h5, %font-h5 {
+  $fontSize: 1em;
+
+  margin-bottom: 0.4em;
+  
+  font-size: $fontSize;  
+  line-height: 1.4;
+}
+
+//----------------------------------------------
+// Paragraphs
+//---------------------------------------------- 
+p {
+  margin: {
+    top: 0;
+    bottom: 0.75em;
+  }
+}
+
+//----------------------------------------------
+// Selection
+//---------------------------------------------- 
+::selection {
+  color: $color-white;
+  background: $color-alpha;
+  text-shadow: none;
+}

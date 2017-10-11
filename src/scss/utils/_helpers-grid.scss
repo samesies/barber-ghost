@@ -1,0 +1,146 @@
+//-------------------------------------------- 
+// Sections
+//--------------------------------------------
+section {
+  position: relative;
+}
+
+.section-padding {
+  padding: 4em 1em;
+
+  @media (min-width: $mq-small) {
+    padding: 6em 2em;
+  }
+
+  @media (min-width: $mq-med) {
+    padding: {
+      right: 1em;
+      left: 1em;
+    }
+  }
+
+  @media (min-width: $mq-xlarge) {
+    padding: {
+      top: 8em;
+      bottom: 8em;
+    }
+  }
+}
+
+.section-padding--no-top {
+  padding: {
+    right: 1em;
+    bottom: 4em;
+    left: 1em;
+  }
+
+  @media (min-width: $mq-small) {
+    padding: {
+      right: 2em;
+      bottom: 6em;
+      left: 2em;
+    }
+  }
+
+  @media (min-width: $mq-med) {
+    padding: {
+      right: 1em;
+      left: 1em;
+    }
+  }
+
+  @media (min-width: $mq-xlarge) {
+    padding-bottom: 8em;
+  }
+}
+
+.section-padding--no-bottom {
+  padding: {
+    top: 4em;
+    right: 1em;
+    left: 1em;
+  }
+
+  @media (min-width: $mq-small) {
+    padding: {
+      top: 6em;
+      right: 2em;
+      left: 2em;
+    }
+  }
+
+  @media (min-width: $mq-med) {
+    padding: {
+      right: 1em;
+      left: 1em;
+    }
+  }
+
+  @media (min-width: $mq-xlarge) {
+    padding-top: 8em;
+  }
+}
+
+.section-padding--none {
+  padding: {
+    right: 1em;
+    left: 1em;
+  }
+
+  @media (min-width: $mq-small) {
+    padding: {
+      right: 2em;
+      left: 2em;
+    }
+  }
+
+  @media (min-width: $mq-med) {
+    padding: {
+      right: 1em;
+      left: 1em;
+    }
+  }
+}
+
+//-------------------------------------------- 
+// Grid
+//--------------------------------------------
+.grid {
+  @extend %auto-margin;
+
+  max-width: $max-width;
+
+  @media (min-width: $mq-med) {
+    width: 65%;
+  }
+
+  @media (min-width: $mq-xlarge) {
+    width: 50%;
+  }
+}
+
+.grid-large {
+  @extend %auto-margin;
+
+  max-width: $max-width--lg;
+
+  @media (min-width: $mq-med) {
+    width: 80%;
+  }
+
+  @media (min-width: $mq-xlarge) {
+    width: 65%;
+  }
+}
+
+.grid-xlarge {
+  @extend %auto-margin;
+
+  @media (min-width: $mq-med) {
+    width: 95%;
+  }
+
+  @media (min-width: $mq-xlarge) {
+    width: 80%;
+  }
+}
