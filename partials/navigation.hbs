@@ -1,0 +1,9 @@
+<nav>
+  <ul class="header__list">
+    {{!-- Loop through the navigation items --}}
+    {{#foreach navigation}}
+      <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+    {{/foreach}}
+    {{!-- End the loop --}}
+  </ul>
+</nav>

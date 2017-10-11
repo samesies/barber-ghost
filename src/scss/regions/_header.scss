@@ -1,0 +1,26 @@
+//----------------------------------------------
+// Header
+//---------------------------------------------- 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-999;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: {
+    right: 1em;
+    left: 1em;
+  }
+
+  &__title {
+
+  }
+
+  &__list {
+    @extend %no-list-style;
+  }
+}
