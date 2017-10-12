@@ -6,15 +6,7 @@
       </figure>
     {{/if}}
     <div class="posts__content">
-      <header class="post-card-header">
-        {{#if primary_tag}}
-          <span class="post-card-tags">{{primary_tag.name}}</span>
-        {{/if}}
-        <h2 class="post-card-title">{{title}}</h2>
-      </header>
-      <section class="post-card-excerpt">
-        <p>{{excerpt words="33"}}</p>
-      </section>
+      <p class="posts__text"><strong>{{title}}</strong> — {{excerpt words="20"}}</p>
     </div>
   </a>
 </article>

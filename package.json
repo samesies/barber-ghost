@@ -37,6 +37,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "masonry-layout": "^4.2.0"
+    "masonry-layout": "^4.2.0",
+    "wowjs": "^1.1.3"
   }
 }

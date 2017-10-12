@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
   }
 
-  font-family: $font-header;
+  font-family: $font-subheader;
   font-weight: 400;
 }
 
@@ -74,13 +74,13 @@ h1, %font-h1 {
 // H2 theme
 //---------------------------------------------- 
 h2, %font-h2 {
-  $fontSize: 2em;
+  $fontSize: 1.2em;
   
   font-size: $fontSize;  
-  line-height: 1.1;
+  line-height: 1.4;
 
   @media (min-width: $mq-xlarge) {
-    font-size: $fontSize + 0.25em;
+    font-size: $fontSize + 0.1em;
   }
 }
 

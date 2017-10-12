@@ -12,10 +12,35 @@
   }
 
   &__link {
+    display: block;
 
+    color: $color-black;
+
+    &:hover {
+
+      .posts__img {
+        transform: translate3d(0, -10px, 0);
+      }
+    }
+  }
+
+  &__img {
+    background-color: $color-grey;
+    transition: transform 400ms ease-in-out;
+
+    img {
+      display: block;
+    }
   }
 
   &__content {
+    padding: {
+      top: 1em;
+      bottom: 1em;
+    }
+  }
 
+  &__text {
+    margin-bottom: 0;
   }
 }
