@@ -2,6 +2,8 @@
 // Header
 //---------------------------------------------- 
 .header {
+  @extend %box-shadow;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -10,17 +12,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 3em;
   width: 100%;
   padding: {
-    right: 1em;
-    left: 1em;
+    right: 2em;
+    left: 2em;
   }
 
-  &__title {
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba($color-black, 0.1);
 
+  &__title {
+    @extend %font-header;
+
+    font-size: $font-xsmall;
+    color: $color-black;
   }
 
   &__list {
     @extend %no-list-style;
+
+    display: flex;
+    align-items: center;
+
+    & > * {
+      @extend .header__title;
+
+      &:not(:last-child) {
+        margin-right: 2em;
+      }
+
+      a {
+        color: $color-black;
+      }
+    }
   }
 }

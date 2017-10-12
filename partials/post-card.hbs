@@ -1,0 +1,20 @@
+<article class="posts__post masonry-item">
+  <a class="posts__link" href="{{url}}">
+    {{#if feature_image}}
+      <figure class="posts__img">
+        <img src="{{feature_image}}" alt=""/>
+      </figure>
+    {{/if}}
+    <div class="posts__content">
+      <header class="post-card-header">
+        {{#if primary_tag}}
+          <span class="post-card-tags">{{primary_tag.name}}</span>
+        {{/if}}
+        <h2 class="post-card-title">{{title}}</h2>
+      </header>
+      <section class="post-card-excerpt">
+        <p>{{excerpt words="33"}}</p>
+      </section>
+    </div>
+  </a>
+</article>

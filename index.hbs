@@ -3,16 +3,16 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
+<section class="posts section-padding">
+  <div class="grid-xlarge">
+    <div class="posts__container masonry">
 
-        <div class="post-feed">
-            {{#foreach posts}}
+      {{#foreach posts}}
 
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> post-card}}
 
-            {{/foreach}}
-        </div>
-
+      {{/foreach}}
     </div>
-</main>
+  </div>
+</section>
