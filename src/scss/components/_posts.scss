@@ -4,11 +4,25 @@
 .posts {
 
   &__container {
-    @include flex-grid(1, 1, 2, 3, $pad: 1em);
+    @include flex-grid(1, 1, 2, $pad: 1em);
   }
 
   &__post {
+    padding: {
+      top: 2em;
+      bottom: 2em;
+    }
 
+    &:nth-child(1) {
+      padding-top: 0;
+    }
+
+    &:nth-child(2) {
+
+      @media (min-width: $mq-med) {
+        padding-top: 0;
+      }
+    }
   }
 
   &__link {
@@ -19,7 +33,7 @@
     &:hover {
 
       .posts__img {
-        transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -5px, 0);
       }
     }
   }
@@ -30,6 +44,8 @@
 
     img {
       display: block;
+
+      animation: fade-in ease-in-out 600ms both;
     }
   }
 

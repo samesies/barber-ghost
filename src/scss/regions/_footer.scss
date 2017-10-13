@@ -9,4 +9,8 @@ body {
 
 main {
   flex-grow: 1;
+
+  .home-template & {
+    margin-top: 3em;
+  }
 }
