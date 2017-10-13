@@ -1,0 +1,55 @@
+//----------------------------------------------
+// Subscribe
+//---------------------------------------------- 
+.subscribe {
+
+  &__container {
+    @extend %auto-margin;
+
+    max-width: $mq-small;
+    margin-bottom: 3em;
+  }
+
+  &__title {
+    @extend %font-header;
+    @extend %text-center;
+
+    display: block;
+
+    font-size: 1.25em;
+    letter-spacing: .01em
+  }
+
+  &__text {
+    @extend %text-center;
+
+    margin: {
+      top: 0.75em;
+      bottom: 1.75em;
+    };
+  }
+
+  &__form {
+
+  }
+
+  &__input {
+
+  }
+
+  &__submit {
+
+  }
+
+  &__error {
+    @extend %text-center;
+
+    margin: {
+      top: 0.75em;
+      bottom: 0;
+    }
+
+    font-weight: 700;
+    letter-spacing: .01em
+  }
+}

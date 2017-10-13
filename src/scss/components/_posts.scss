@@ -9,8 +9,8 @@
 
   &__post {
     padding: {
-      top: 2em;
-      bottom: 2em;
+      top: 4em;
+      bottom: 4em;
     }
 
     &:nth-child(1) {
@@ -33,7 +33,7 @@
     &:hover {
 
       .posts__img {
-        transform: translate3d(0, -5px, 0);
+        transform: translate3d(0, -10px, 0);
       }
     }
   }
@@ -50,13 +50,12 @@
   }
 
   &__content {
-    padding: {
-      top: 1em;
-      bottom: 1em;
-    }
+    padding-top: 1.25em;    
   }
 
   &__text {
     margin-bottom: 0;
+
+    font-size: 1.1em;
   }
 }

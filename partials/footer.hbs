@@ -1,11 +1,39 @@
 {{!-- The footer at the very bottom of the screen --}}
+<footer class="footer section-padding">
+  <div class="grid">
+    {{!-- Subscribe --}}
+    {{#if @labs.subscribers}}
+      <div class="subscribe" id="subscribe">
+        <div class="subscribe__container">
+          <span class="subscribe__title">Subscribe</span>
+          <p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p>
+          {{subscribe_form 
+            form_class="subscribe__form"
+            input_class="subscribe__input"
+            button_class="subscribe__submit"
+            placeholder="Email Address"
+          }}
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if @labs.subscribers}}
+      <hr class="sep"/>
+    {{/if}}
+
+    {{!-- Footer --}}
+    <div class="footer__container">
+
+    </div>
+  </div>
+</footer>
 
 {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
 <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
 
 {{#if pagination.pages}}
   <script>
-      var maxPages = parseInt('{{pagination.pages}}');
+    var maxPages = parseInt('{{pagination.pages}}');
   </script>
   <script src="{{asset "js/infinitescroll.js"}}"></script>
 {{/if}}
