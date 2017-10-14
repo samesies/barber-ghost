@@ -74,13 +74,13 @@ h1, %font-h1 {
 // H2 theme
 //---------------------------------------------- 
 h2, %font-h2 {
-  $fontSize: 1.2em;
+  $fontSize: 1.25em;
   
   font-size: $fontSize;  
   line-height: 1.4;
 
   @media (min-width: $mq-xlarge) {
-    font-size: $fontSize + 0.1em;
+    font-size: $fontSize + 0.25em;
   }
 }
 

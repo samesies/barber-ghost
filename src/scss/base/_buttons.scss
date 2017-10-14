@@ -16,4 +16,11 @@ button {
   outline: 0;
   cursor: pointer;
   -webkit-appearance: none;
+  transition: background 200ms ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($color-black, 5);
+  }
 }

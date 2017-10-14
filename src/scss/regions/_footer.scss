@@ -12,6 +12,29 @@
 
   &__text {
     @extend %text-center;
+
+    margin-bottom: 2em;
+  }
+
+  &__tags {
+    @extend %flex-center;
+    @extend %no-list-style;
+
+    & > *:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+
+  &__link {
+    font-size: $font-small;
+    color: $color-grey;
+    transition: color 200ms ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-black;
+    }
   }
 }
 
@@ -27,7 +50,8 @@
 main {
   // flex-grow: 1;
 
-  .home-template & {
+  .home-template &,
+  .tag-template & {
     margin-top: 3em;
   }
 }

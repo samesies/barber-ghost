@@ -3,30 +3,30 @@
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 {{#tag}}
-<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
-    <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
-        </div>
+  <section class="mast section-padding">
+    <div class="grid">
+      <h2 class="mast__title">{{name}}</h2>
     </div>
-</header>
+  </section>
 {{/tag}}
 
+<section class="section-padding--none">
+  <div class="grid-large">
+    <hr class="sep"/>
+  </div>
+</section>
+
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-            {{/foreach}}
-        </div>
+<section class="posts">
+  <div class="grid-large">
+    <div class="posts__container masonry">
+
+      {{#foreach posts}}
+
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> post-card}}
+
+      {{/foreach}}
     </div>
-</main>
+  </div>
+</section>

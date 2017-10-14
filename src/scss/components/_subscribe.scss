@@ -12,12 +12,12 @@
 
   &__title {
     @extend %font-header;
+    @extend %letter-spacing;
     @extend %text-center;
 
     display: block;
 
     font-size: 1.25em;
-    letter-spacing: .01em
   }
 
   &__text {
@@ -29,11 +29,9 @@
     };
   }
 
-  &__submit {
-
-  }
-
   &__error {
+    @extend %font-header;
+    @extend %letter-spacing;
     @extend %text-center;
 
     margin: {
@@ -41,8 +39,6 @@
       bottom: 0;
     }
 
-    font-weight: 700;
-    letter-spacing: .01em;
     color: $color-alpha;
   }
 }

@@ -5,48 +5,50 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<section class="post">
+<section class="post section-padding">
   <div class="grid">
-    <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-      <header class="post-full-header">
-        <section class="post-full-meta">
-          <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+    <article class="post__container {{post_class}}">
+      <header class="post__header">
+        <div>
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
           {{#primary_tag}}
-            <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+            <span>/</span> <a href="{{url}}">{{name}}</a>
           {{/primary_tag}}
-        </section>
-        <h1 class="post-full-title">{{title}}</h1>
+        </div>
+        <h1>{{title}}</h1>
       </header>
 
       {{#if feature_image}}
-        <figure class="post-full-image" style="background-image: url({{feature_image}})"></figure>
+        <figure class="post__img">
+          <img src="{{feature_image}}"/>
+        </figure>
       {{/if}}
 
-      <section class="post-full-content">
+      <section class="post__content">
         {{content}}
       </section>
 
-      <footer class="post-full-footer">
+      <footer class="post__footer">
         {{!-- Everything inside the #author tags pulls data from the author --}}
         {{#author}}
 
-        <section class="author-card">
-          {{#if profile_image}}
-            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-          {{/if}}
-          <section class="author-card-content">
-            <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-            {{#if bio}}
-              <p>{{bio}}</p>
-            {{else}}
-              <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+          <section class="author-card">
+            {{#if profile_image}}
+              <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
+            <section class="author-card-content">
+              <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
+              {{#if bio}}
+                <p>{{bio}}</p>
+              {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+              {{/if}}
+            </section>
           </section>
-        </section>
-        <div class="post-full-footer-right">
-          <a class="author-card-button" href="{{url}}">Read More</a>
-        </div>
-
+          <div class="post-full-footer-right">
+            <a class="author-card-button" href="{{url}}">Read More</a>
+          </div>
+          
         {{/author}}
       </footer>
 
