@@ -5,56 +5,59 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<section class="post section-padding {{post_class}}">
-  <div class="grid-small">
-    <article class="post__container">
-      <header class="post__header">
-        <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+<section class="post {{post_class}}">
+  <article>
+    <div class="post__header section-padding">
+      <div class="grid">
+        {{!-- <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> --}}
+
+        <h2>{{title}}</h2>
 
         {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
+        {{!-- {{#author}}
           <span class="post__author">{{name}}</span>
-        {{/author}}
+        {{/author}} --}}
+      </div>
+    </div>
 
-        <h1>{{title}}</h1>
-      </header>
+    {{#if feature_image}}
+      <div class="post__img">
+          <div>
+            <figure class="absolute-bg" style="background-image: url('{{feature_image}}');"></figure>
+          </div>
+      </div>
+    {{/if}}
 
-      {{#if feature_image}}
-        <figure class="post__img">
-          <img src="{{feature_image}}"/>
-        </figure>
-      {{/if}}
-
-      <section class="post__content">
+    <div class="section-padding grid">
+      <div class="post__content">
         {{content}}
-      </section>
+      </div>
+    </div>
 
-      {{!--
+    {{!--
 
-      If you use Disqus comments, just uncomment this block.
-      The only thing you need to change is "test-apkdzgmqhj" - which
-      should be replaced with your own Disqus site-id.
+    If you use Disqus comments, just uncomment this block.
+    The only thing you need to change is "test-apkdzgmqhj" - which
+    should be replaced with your own Disqus site-id.
 
-      <section class="post__comments">
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = '{{url absolute="true"}}';
-            this.page.identifier = 'ghost-{{comment_id}}';
-          };
-          (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-      </section>
-      --}}
+    <div class="post__comments">
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = '{{url absolute="true"}}';
+          this.page.identifier = 'ghost-{{comment_id}}';
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    </div>
+    --}}
 
-    </article>
-
-  </div>
+  </article>
 </section>
 
 {{!-- Links to Previous/Next posts --}}

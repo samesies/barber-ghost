@@ -51,7 +51,8 @@ main {
   // flex-grow: 1;
 
   .home-template &,
-  .tag-template & {
-    margin-top: 3em;
+  .tag-template &,
+  .post-template & {
+    margin-top: $header-height;
   }
 }
