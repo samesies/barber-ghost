@@ -5,16 +5,17 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<section class="post section-padding">
-  <div class="grid">
-    <article class="post__container {{post_class}}">
+<section class="post section-padding {{post_class}}">
+  <div class="grid-small">
+    <article class="post__container">
       <header class="post__header">
-        <div>
-          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-          {{#primary_tag}}
-            <span>/</span> <a href="{{url}}">{{name}}</a>
-          {{/primary_tag}}
-        </div>
+        <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+
+        {{!-- Everything inside the #author tags pulls data from the author --}}
+        {{#author}}
+          <span class="post__author">{{name}}</span>
+        {{/author}}
+
         <h1>{{title}}</h1>
       </header>
 
@@ -28,37 +29,13 @@ into the {body} of the default.hbs template --}}
         {{content}}
       </section>
 
-      <footer class="post__footer">
-        {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
-
-          <section class="author-card">
-            {{#if profile_image}}
-              <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
-            <section class="author-card-content">
-              <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-              {{#if bio}}
-                <p>{{bio}}</p>
-              {{else}}
-                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-              {{/if}}
-            </section>
-          </section>
-          <div class="post-full-footer-right">
-            <a class="author-card-button" href="{{url}}">Read More</a>
-          </div>
-          
-        {{/author}}
-      </footer>
-
       {{!--
 
       If you use Disqus comments, just uncomment this block.
       The only thing you need to change is "test-apkdzgmqhj" - which
       should be replaced with your own Disqus site-id.
 
-      <section class="post-full-comments">
+      <section class="post__comments">
         <div id="disqus_thread"></div>
         <script>
           var disqus_config = function () {
@@ -81,54 +58,32 @@ into the {body} of the default.hbs template --}}
 </section>
 
 {{!-- Links to Previous/Next posts --}}
-<aside class="read-next outer">
-  <div class="inner">
-    <div class="read-next-feed">
+<section class="related section-padding">
+  <div class="grid-xlarge">
+    <h2 class="related__title">Related</h2>
+    <div class="related__container">
       {{#if primary_tag}}
-        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
-          {{#if related_posts}}
-            <article class="read-next-card"
-              {{#if ../primary_tag.feature_image}}
-                style="background-image: url({{../primary_tag.feature_image}})"
-              {{else}}
-                {{#if @blog.cover_image}}
-                style="background-image: url({{@blog.cover_image}})"{{/if}}
-              {{/if}}
-            >
-              <header class="read-next-card-header">
-                <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
-                {{#../primary_tag}}
-                  <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                {{/../primary_tag}}
-              </header>
-              <div class="read-next-divider">{{> "icons/infinity"}}</div>
-              <div class="read-next-card-content">
-                <ul>
-                  {{#foreach related_posts}}
-                    <li><a href="{{url}}">{{title}}</a></li>
-                  {{/foreach}}
-                </ul>
-              </div>
-              <footer class="read-next-card-footer">
-                <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
-              </footer>
-            </article>
+        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3"}}
+          {{#if posts}}
+            {{#foreach posts}}
+              <article class="related__post">
+                <a class="related__link" href="{{url}}">
+                  {{#if feature_image}}
+                    <figure class="related__img">
+                      <img src="{{feature_image}}"/>
+                    </figure>
+                  {{/if}}
+                  <div class="related__content">
+                    <p class="related__text">{{title}}</p>
+                  </div>
+                </a>
+              </article>
+            {{/foreach}}
           {{/if}}
         {{/get}}
       {{/if}}
-
-      {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-      {{#next_post}}
-
-      {{/next_post}}
-
-      {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-      {{#prev_post}}
-
-      {{/prev_post}}
-
     </div>
   </div>
-</aside>
+</section>
 
 {{/post}}

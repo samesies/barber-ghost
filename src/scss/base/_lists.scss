@@ -9,3 +9,39 @@ ul, ol {
   margin: 0;
   padding: 0;
 }
+
+//----------------------------------------------
+//  Post Lists
+//----------------------------------------------
+.post {
+
+  ol, ul {
+    margin-bottom: 1em;
+    margin-left: 1em;
+
+    & > li {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: -1em;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  ol {
+    @extend %no-list-style;
+    
+    counter-reset: li;
+
+    & > li:before { 
+      content: counter(li) ".";
+
+      counter-increment: li;
+    }
+  }
+}

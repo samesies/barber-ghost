@@ -41,29 +41,22 @@ body {
 // Headings
 //---------------------------------------------- 
 h1, h2, h3, h4, h5, h6 {
+  @extend %font-header;
+
   margin: {
     top: 0;
     bottom: 0;
   }
-
-  font-family: $font-subheader;
-  font-weight: 400;
 }
 
 //----------------------------------------------
 // H1 theme
 //---------------------------------------------- 
 h1, %font-h1 {
-  $fontSize: 3em;
-
-  margin-bottom: 0.25em;
+  $fontSize: 1.75em;
   
-  font-size: $fontSize - 1em; 
-  line-height: 1.1;
-
-  @media (min-width: $mq-med) {
-    font-size: $fontSize;  
-  }
+  font-size: $fontSize; 
+  line-height: 1.2;
 
   @media (min-width: $mq-xlarge) {
     font-size: $fontSize + 0.25em;
@@ -137,6 +130,17 @@ p {
     top: 0;
     bottom: 0.75em;
   }
+}
+
+//----------------------------------------------
+// Misc
+//---------------------------------------------- 
+strong {
+  @extend %letter-spacing;
+}
+
+mark {
+  color: $color-black;
 }
 
 //----------------------------------------------

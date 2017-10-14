@@ -1,0 +1,25 @@
+//----------------------------------------------
+// Code
+//---------------------------------------------- 
+code, kbd, pre, samp {
+  font-family: Courier, monospace;
+  font-size: $font-small;
+}
+
+pre {
+  padding: 2em 0.5em;
+
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: $color-black;
+  background: $color-lightgrey;
+  overflow: hidden;
+
+  @media (min-width: $mq-med) {
+    padding: {
+      right: 2em;
+      left: 2em;
+    }
+  }
+}

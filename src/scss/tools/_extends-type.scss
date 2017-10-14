@@ -2,7 +2,8 @@
 // Text Center
 //----------------------------------------------
 %font-header {
-  font-family: $font-header;
+  @extend %letter-spacing;
+
   font-weight: 700;
 }
 

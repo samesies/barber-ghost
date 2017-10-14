@@ -4,8 +4,7 @@
 .mast {
   @extend %text-center;
 
-  &__title {
-    @extend %font-header;
-    @extend %letter-spacing;
-  }
+  // &__title {
+  //   @extend %font-header;
+  // }
 }

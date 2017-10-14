@@ -31,3 +31,24 @@ iframe {
   background-size: cover;
   overflow: hidden;
 }
+
+//----------------------------------------------
+// Flex Vid
+//----------------------------------------------
+.flex-vid {
+  position: relative;
+
+  height: 0;
+  padding-bottom: 56.5%; // Widescreen
+
+  overflow: hidden;
+
+  iframe, object, embed, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+  }
+}

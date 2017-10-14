@@ -21,7 +21,7 @@
     "theme"
   ],
   "config": {
-    "posts_per_page": 10
+    "posts_per_page": 12
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
