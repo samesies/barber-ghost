@@ -2,15 +2,45 @@
 // Posts
 //---------------------------------------------- 
 .posts {
+  padding: 4em 1em 2em;
+
+  @media (min-width: $mq-small) {
+    padding: {
+      top: 6em;
+      right: 2em;
+      left: 2em;
+    }
+  }
+
+  @media (min-width: $mq-med) {
+    padding: {
+      right: 1em;
+      left: 1em;
+    }
+  }
+
+  @media (min-width: $mq-xlarge) {
+    padding: {
+      top: 8em;
+      bottom: 4em;
+    }
+  }
 
   &__container {
-    @include flex-grid(1, 1, 2, $pad: 1em);
+    @include flex-grid(1, 1, 2, 2, 3, $pad: 1em);
   }
 
   &__post {
     padding: {
-      top: 4em;
-      bottom: 4em;
+      top: 2em;
+      bottom: 2em;
+    }
+
+    @media (min-width: $mq-small) {
+      padding: {
+        top: 4em;
+        bottom: 4em;
+      }
     }
 
     &:nth-child(1) {
@@ -20,6 +50,13 @@
     &:nth-child(2) {
 
       @media (min-width: $mq-med) {
+        padding-top: 0;
+      }
+    }
+
+    &:nth-child(3) {
+
+      @media (min-width: $mq-xlarge) {
         padding-top: 0;
       }
     }
@@ -39,7 +76,7 @@
   }
 
   &__img {
-    background-color: $color-grey;
+    background-color: $color-lightgrey;
     transition: transform 400ms ease-in-out;
 
     img {
