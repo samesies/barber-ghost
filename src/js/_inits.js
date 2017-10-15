@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socialShare();
   }
 
-  if (document.getElementById('form').length) {
+  if (document.getElementById('form')) {
     Formspree.init();
   }
 

@@ -10,9 +10,7 @@
   &__header {
     @extend %text-center;
 
-    .amp-template & {
-      border-bottom: $border;
-    }
+    border-bottom: $border;
   }
 
   &__date {
@@ -25,12 +23,15 @@
   }
 
   &__img {
-    height: calc(100vh - 3em);
+    height: 18em;
     padding: 2em;
 
-    border: {
-      top: $border;
-      bottom: $border;
+    @media (min-width: $mq-small) {
+      height: 36em;
+    }
+
+    @media (min-width: $mq-med) {
+      height: calc(100vh - 3em);
     }
 
     & > * {
@@ -44,6 +45,7 @@
   }
 
   &__content {
+    border-top: $border;
 
     img[src$="#full"] {
       width: 100vw;

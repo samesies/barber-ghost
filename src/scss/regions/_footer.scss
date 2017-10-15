@@ -20,6 +20,8 @@
     @extend %flex-center;
     @extend %no-list-style;
 
+    flex-wrap: wrap;
+
     & > *:not(:last-child) {
       margin-right: 1em;
     }
@@ -49,12 +51,5 @@
 
 main {
   // flex-grow: 1;
-
-  .home-template &,
-  .tag-template &,
-  .author-template &,
-  .post-template &,
-  .page-contact & {
-    margin-top: $header-height;
-  }
+  margin-top: $header-height;
 }

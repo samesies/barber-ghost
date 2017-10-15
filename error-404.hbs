@@ -6,51 +6,57 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{meta_title}}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{meta_title}}</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <link rel="stylesheet" href="{{asset "css/app.min.css"}}">
 </head>
 <body class="error-template">
-    <div class="site-wrapper">
+  {{> header}}
 
-        <header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
-            <div class="inner">
-                <nav class="site-nav-center">
-                    {{#if @blog.logo}}
-                        <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-                    {{else}}
-                        <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.title}}</a>
-                    {{/if}}
-                </nav>
-            </div>
-        </header>
+  <main role="main" class="💈">
+    <section class="mast bg-lightgrey section-padding">
+      <div class="grid-small">
+        <h2 class="color-alpha">{{code}}</h2>
+        <p class="mast__text">The page does not exist.</p>
+      </div>
+    </section>
+  </main>
 
-        <main id="site-main" class="site-main outer" role="main">
-            <div class="inner">
+  <footer class="footer section-padding">
+    <div class="grid">
+      {{#if @labs.subscribers}}
+        <div class="subscribe" id="subscribe">
+          <div class="subscribe__container">
+            <span class="subscribe__title">Subscribe</span>
+            <p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p>
+            {{subscribe_form placeholder="Email Address"}}
+          </div>
+        </div>
 
-                <section class="error-message">
-                    <h1 class="error-code">{{code}}</h1>
-                    <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@blog.url}}">Go to the front page →</a>
-                </section>
-            </div>
-        </main>
+        <hr class="sep"/>
+      {{/if}}
 
-        {{#get "posts" limit="3"}}
-        <aside class="outer">
-            <div class="inner">
-                <div class="post-feed">
-                    {{#foreach posts}}
-                        {{> "post-card"}}
-                    {{/foreach}}
-                </div>
-            </div>
-        </aside>
+      <div class="footer__container">
+        <p class="footer__text">New posts added every few days.</p>
+
+        {{#get "tags" limit="5" order="count.posts DESC"}}
+          {{#if tags}}
+            <ul class="footer__tags">
+              {{#foreach tags}}
+                <li>
+                  <a class="footer__link" href="{{url}}">{{name}}</a>
+                </li>
+              {{/foreach}}
+            </ul>
+          {{/if}}
         {{/get}}
-
+      </div>
     </div>
+  </footer>
 </body>
 </html>

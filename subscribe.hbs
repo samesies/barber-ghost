@@ -1,0 +1,15 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<section class="mast bg-subscribe section-padding">
+  <div class="grid-small">
+    {{^if success}}
+      <h2 class="color-alpha">Error</h2>
+      <p class="mast__text">You’ve unsuccessfully subscribed to {{@blog.title}}. Please try to subscribe again.</p>
+    {{else}}
+      <h2>Subscribe</h1>
+      <p class="mast__text">You’ve successfully subscribed to {{@blog.title}}.</p>
+    {{/if}}
+  </div>
+</section>
