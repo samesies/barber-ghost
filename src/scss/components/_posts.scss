@@ -95,4 +95,22 @@
 
     font-size: 1.1em;
   }
+
+  &__pagination {
+    @extend %text-center;
+  
+    @media (min-width: $mq-small) {
+      padding-bottom: 2em;
+    }
+
+    @media (min-width: $mq-xlarge) {
+      padding-bottom: 4em;
+    }
+  }
+
+  &__next {
+    @include btn-split($color-black, $pad: 0.75em 1em);
+
+    font-size: $font-small;
+  }
 }
