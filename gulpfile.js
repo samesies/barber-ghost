@@ -20,6 +20,15 @@ gulp.task('sass', () => {
   .pipe(gulp.dest('./assets/css'));
 });
 
+gulp.task('amp', () => {
+  return gulp.src('./src/scss/amp.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
+  .pipe(cleanCSS())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest('./assets/css'));
+});
+
 gulp.task('fonts', () => {
   return gulp.src('./src/scss/fonts.scss')
   .pipe(sass().on('error', sass.logError))
@@ -39,10 +48,10 @@ gulp.task('browserify', () => {
   .pipe(gulp.dest('./assets/js'));
 });
 
-gulp.task('build', ['sass', 'fonts', 'browserify']);
+gulp.task('build', ['sass', 'amp', 'fonts', 'browserify']);
 
 gulp.task('watch', () => {
-  gulp.watch('./src/scss/**/*.scss', ['sass', 'fonts']);
+  gulp.watch('./src/scss/**/*.scss', ['sass', 'amp', 'fonts']);
   gulp.watch('./src/js/**/*.js', ['browserify']);
 });
 

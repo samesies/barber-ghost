@@ -8,6 +8,7 @@ const Formspree = (() => {
     settings() {
       return {
         body: document.body,
+        formAction: document.getElementById('form').action,
         formMessage: document.getElementsByClassName('form__message')[0],
         input: document.getElementsByTagName('input'),
         textarea: document.getElementsByTagName('textarea'),
@@ -53,7 +54,7 @@ const Formspree = (() => {
 
         const request = new XMLHttpRequest();
 
-        request.open('POST', 'https://formspree.io/thomas.vaeth@gmail.com', true);
+        request.open('POST', s.formAction, true);
         request.setRequestHeader('accept', 'application/json');
 
         const formData = new FormData(form);

@@ -3,8 +3,16 @@
 //---------------------------------------------- 
 .post {
 
+  .amp-template & {
+    background-color: $color-white;
+  }
+
   &__header {
     @extend %text-center;
+
+    .amp-template & {
+      border-bottom: $border;
+    }
   }
 
   &__date {

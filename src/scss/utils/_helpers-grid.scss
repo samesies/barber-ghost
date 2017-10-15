@@ -76,6 +76,7 @@ section {
 .grid {
   @extend %auto-margin;
 
+  width: 100%;
   max-width: $max-width;
 
   @media (min-width: $mq-med) {
@@ -90,6 +91,7 @@ section {
 .grid-small {
   @extend %auto-margin;
 
+  width: 100%;
   max-width: 38em;
 
   @media (min-width: $mq-med) {
@@ -104,6 +106,7 @@ section {
 .grid-large {
   @extend %auto-margin;
 
+  width: 100%;
   max-width: $max-width--lg;
 
   @media (min-width: $mq-med) {
@@ -117,6 +120,8 @@ section {
 
 .grid-xlarge {
   @extend %auto-margin;
+
+  width: 100%;
 
   @media (min-width: $mq-med) {
     width: 95%;

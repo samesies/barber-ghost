@@ -16,12 +16,19 @@
   height: $header-height;
   width: 100%;
   padding: {
-    right: 2em;
-    left: 2em;
+    right: 1em;
+    left: 1em;
   }
 
   background-color: $color-white;
   border-bottom: $border;
+
+  @media (min-width: $mq-small) {
+    padding: {
+      right: 2em;
+      left: 2em;
+    }
+  }
 
   &__title {
     @extend %font-header;
@@ -40,7 +47,11 @@
       @extend .header__title;
 
       &:not(:last-child) {
-        margin-right: 2em;
+        margin-right: 1em;
+
+        @media (min-width: $mq-small) {
+          margin-right: 2em;
+        }
       }
 
       a {
