@@ -10,7 +10,7 @@ form {
 //----------------------------------------------
 // Inputs
 //---------------------------------------------- 
-input {
+input, textarea {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -26,6 +26,24 @@ input {
   box-shadow: none;
   outline: 0;
   -webkit-appearance: none;
+}
+
+input[type="submit"] {
+  position: relative;
+  z-index: $z-1;
+
+  cursor: pointer;
+}
+
+//----------------------------------------------
+// Labels
+//---------------------------------------------- 
+label {
+  @extend %font-header;
+
+  display: block;
+
+  font-size: $font-small;
 }
 
 //----------------------------------------------

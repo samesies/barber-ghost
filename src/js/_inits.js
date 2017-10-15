@@ -3,6 +3,7 @@
 //----------------------------------------------
 import Masonry from 'masonry-layout';
 import WOW from './vendor/_wow.js';
+import Formspree from './components/_formspree.js';
 import { miscFlexVid, socialShare } from './components/_miscellaneous.js';
 
 //----------------------------------------------
@@ -27,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelectorAll('.post-template').length) {
     miscFlexVid();
     socialShare();
+  }
+
+  if (document.getElementById('form').length) {
+    Formspree.init();
   }
 
 });

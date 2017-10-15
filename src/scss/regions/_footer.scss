@@ -53,7 +53,8 @@ main {
   .home-template &,
   .tag-template &,
   .author-template &,
-  .post-template & {
+  .post-template &,
+  .page-contact & {
     margin-top: $header-height;
   }
 }

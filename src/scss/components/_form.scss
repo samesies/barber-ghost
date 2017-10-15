@@ -1,0 +1,88 @@
+//----------------------------------------------
+// Form
+//---------------------------------------------- 
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__subcontainer {
+    display: flex;
+    justify-content: space-between;
+
+    & > * {
+      flex-basis: 47.5%;
+      max-width: 47.5%;
+    }
+  }
+
+  &__active {
+    position: relative;
+
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1.5em;
+
+      height: 1px;
+      width: 100%;
+
+      background-color: $color-alpha;
+      transform: translate3d(-105%, 0, 0);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &.js-form-active {
+
+      &:before {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    input, textarea {
+      margin-bottom: 1.5em;
+
+      font-size: 1em;
+      border: 0;
+      border-bottom: 1px solid $color-black;
+    }
+  }
+
+  &__submit {
+    @extend %text-center; 
+  }
+
+  &__btn {
+    @include btn-split($color-black);
+
+    display: inline-block;
+
+    input {
+      padding: {
+        right: 1em;
+        left: 1em;
+      }
+
+      font-size: 1em;
+      border: 0;
+    }
+  }
+
+  &__message {
+    @extend %font-header;
+
+    margin: {
+      top: 2em;
+      bottom: 0;
+    }
+    padding: 0.5em 1.5em;
+
+    background: $color-lightgrey;
+    border-left: 2px solid $color-black;
+    opacity: 0;
+  }
+}

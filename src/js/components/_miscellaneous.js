@@ -1,44 +1,4 @@
 //----------------------------------------------
-// Infinite Scroll
-//---------------------------------------------- 
-const miscInfiniteScroll = msnry => {
-  var pathname = window.location.pathname.replace(/#(.*)$/g, '').replace('/\//g', '/');
-
-  var isLoading = false;
-
-  // return if already loading
-  if (isLoading) return;
-
-  // return if currentPage is the last page already
-  if (currentPage === maxPages) return;
-
-  isLoading = true;
-
-  // next page
-  currentPage++;
-
-  // Load more
-  var nextPage = `${pathname}page/${currentPage}/`;
-
-  fetch(nextPage).then(response => response.text()).then(text => {
-    var parse = document.createRange().createContextualFragment(text);
-    var posts = parse.querySelectorAll('.posts__post');
-
-    if (posts.length) {
-      [].forEach.call(posts, post => {
-        document.querySelector('.posts__container').appendChild(post);
-        msnry.appended(post);
-        msnry.layout();
-      });
-    }
-
-    isLoading = false;
-  }).catch(error => {
-    console.error(error);
-  });
-};
-
-//----------------------------------------------
 // Flex Vid
 //---------------------------------------------- 
 const miscFlexVid = () => {
@@ -68,10 +28,49 @@ const socialShare = () => {
 };
 
 //----------------------------------------------
+// Infinite Scroll
+//---------------------------------------------- 
+// const miscInfiniteScroll = msnry => {
+//   var pathname = window.location.pathname.replace(/#(.*)$/g, '').replace('/\//g', '/');
+
+//   var isLoading = false;
+
+//   // return if already loading
+//   if (isLoading) return;
+
+//   // return if currentPage is the last page already
+//   if (currentPage === maxPages) return;
+
+//   isLoading = true;
+
+//   // next page
+//   currentPage++;
+
+//   // Load more
+//   var nextPage = `${pathname}page/${currentPage}/`;
+
+//   fetch(nextPage).then(response => response.text()).then(text => {
+//     var parse = document.createRange().createContextualFragment(text);
+//     var posts = parse.querySelectorAll('.posts__post');
+
+//     if (posts.length) {
+//       [].forEach.call(posts, post => {
+//         document.querySelector('.posts__container').appendChild(post);
+//         msnry.appended(post);
+//         msnry.layout();
+//       });
+//     }
+
+//     isLoading = false;
+//   }).catch(error => {
+//     console.error(error);
+//   });
+// };
+
+//----------------------------------------------
 // Exports
 //----------------------------------------------
 module.exports = {
-  miscInfiniteScroll,
   miscFlexVid,
   socialShare
 };
