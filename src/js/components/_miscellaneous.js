@@ -1,11 +1,12 @@
-//----------------------------------------------
+// ----------------------------------------------
 // Flex Vid
-//---------------------------------------------- 
+// ---------------------------------------------- 
 const miscFlexVid = () => {
   const iframeArr = document.querySelectorAll('.post__content iframe');
 
   [].forEach.call(iframeArr, iframe => {
     const div = document.createElement('div');
+
     div.className = 'flex-vid';
 
     iframe.parentNode.insertBefore(div, iframe);
@@ -14,9 +15,9 @@ const miscFlexVid = () => {
   });
 };
 
-//----------------------------------------------
+// ----------------------------------------------
 // Social Share
-//---------------------------------------------- 
+// ---------------------------------------------- 
 const socialShare = () => {
   const socialArr = document.querySelectorAll('.post__social a');
 
@@ -27,9 +28,9 @@ const socialShare = () => {
   });
 };
 
-//----------------------------------------------
+// ----------------------------------------------
 // Infinite Scroll
-//---------------------------------------------- 
+// ---------------------------------------------- 
 // const miscInfiniteScroll = msnry => {
 //   var pathname = window.location.pathname.replace(/#(.*)$/g, '').replace('/\//g', '/');
 
@@ -67,9 +68,9 @@ const socialShare = () => {
 //   });
 // };
 
-//----------------------------------------------
+// ----------------------------------------------
 // Exports
-//----------------------------------------------
+// ----------------------------------------------
 module.exports = {
   miscFlexVid,
   socialShare

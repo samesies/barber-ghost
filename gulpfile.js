@@ -6,6 +6,7 @@ const babelify = require('babelify');
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
 const cleanCSS = require('gulp-clean-css');
+const eslint = require('gulp-eslint');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const source = require('vinyl-source-stream');
@@ -35,6 +36,18 @@ gulp.task('fonts', () => {
   .pipe(cleanCSS())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('./assets/css'));
+});
+
+gulp.task('lint', () => {
+  return gulp.src([
+    './src/js/components/_formspree.js',
+    './src/js/components/_miscellaneous.js',
+    './src/js/components/_pageTransition.js',
+    './kit/js/_inits.js'
+  ])
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError());
 });
 
 gulp.task('browserify', () => {

@@ -1,0 +1,16 @@
+//----------------------------------------------
+// Page Transition
+//---------------------------------------------- 
+body:not(.error-template) {
+  opacity: 0;
+
+  &.js-page-loaded {
+    opacity: 1;
+    transition: opacity 600ms ease-in-out;
+  }
+
+  &.js-page-exiting {
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+  }
+}

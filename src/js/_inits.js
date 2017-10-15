@@ -1,14 +1,15 @@
-//----------------------------------------------
+// ----------------------------------------------
 // Imports
-//----------------------------------------------
+// ----------------------------------------------
 import Masonry from 'masonry-layout';
 import WOW from './vendor/_wow.js';
 import Formspree from './components/_formspree.js';
 import { miscFlexVid, socialShare } from './components/_miscellaneous.js';
+import PageTransition from './components/_pageTransition.js';
 
-//----------------------------------------------
+// ----------------------------------------------
 // Inits
-//----------------------------------------------
+// ----------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   let msnry;
 
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inits
   wow.init();
+  PageTransition.init();
+
   if (document.querySelectorAll('.post-template').length) {
     miscFlexVid();
     socialShare();

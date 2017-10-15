@@ -24,12 +24,16 @@
     "posts_per_page": 12
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.1",
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "eslint": "^4.9.0",
+    "eslint-config-eslint": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-clean-css": "^3.9.0",
+    "gulp-eslint": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",

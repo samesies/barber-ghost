@@ -50,20 +50,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 //----------------------------------------------
-// H1 theme
-//---------------------------------------------- 
-h1, %font-h1 {
-  $fontSize: 1.75em;
-  
-  font-size: $fontSize; 
-  line-height: 1.2;
-
-  @media (min-width: $mq-xlarge) {
-    font-size: $fontSize + 0.25em;
-  }
-}
-
-//----------------------------------------------
 // H2 theme
 //---------------------------------------------- 
 h2, %font-h2 {
@@ -78,51 +64,6 @@ h2, %font-h2 {
 }
 
 //----------------------------------------------
-// H3 theme
-//---------------------------------------------- 
-h3, %font-h3 {
-  $fontSize: 1.25em;
-
-  margin-bottom: 0.25em;
-  
-  font-size: $fontSize;  
-  line-height: 1.1;
-
-  @media (min-width: $mq-xlarge) {
-    font-size: $fontSize + 0.25em;
-  }
-}
-
-//----------------------------------------------
-// H4 theme
-//---------------------------------------------- 
-h4, %font-h4 {
-  $fontSize: 1.25em; 
-
-  margin-bottom: 0.5em;
-  
-  font-size: $fontSize;  
-  font-weight: 400;
-  line-height: 1.4;
-
-  @media (min-width: $mq-xlarge) {
-   font-size: $fontSize + 0.25em;
-  }
-}
-
-//----------------------------------------------
-// H5 theme
-//---------------------------------------------- 
-h5, %font-h5 {
-  $fontSize: 1em;
-
-  margin-bottom: 0.4em;
-  
-  font-size: $fontSize;  
-  line-height: 1.4;
-}
-
-//----------------------------------------------
 // Paragraphs
 //---------------------------------------------- 
 p {
@@ -133,10 +74,67 @@ p {
 }
 
 //----------------------------------------------
+// Blockquote
+//---------------------------------------------- 
+q, blockquote {
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
+  padding: 0.5em;
+
+  font-family: $font-header;
+  font-weight: 400;
+
+  font-size: 1.1em;
+  color: $color-black;
+  border-left: 2px solid $color-black;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $mq-small) {
+    padding: {
+      right: 2em;
+      left: 2em;
+    }
+  }
+}
+
+cite {
+  @extend %font-header;
+
+  display: block;
+  margin-top: 0.25em;
+
+  font-size: $font-xxsmall;
+  font-style: normal;
+  color: $color-grey;
+  text-align: right;
+
+  @media (min-width: $mq-med) {
+    font-size: $font-xsmall;
+  }
+
+  &:before {
+    content: "\2014 \0020";
+  }
+}
+
+//----------------------------------------------
 // Misc
 //---------------------------------------------- 
 strong {
   @extend %letter-spacing;
+}
+
+small {
+  font-size: $font-xsmall;
+}
+
+strong {
+  font-weight: 700;
 }
 
 mark {

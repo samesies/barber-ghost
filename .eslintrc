@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint",
+  "rules": {
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "indent": ["error", 2],
+    "no-inner-declarations": "off",
+    "no-undef": "off",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "warn",
+    "quotes": ["error", "single"],
+    "require-jsdoc": "warn"
+  }
+}

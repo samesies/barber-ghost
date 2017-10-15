@@ -16,8 +16,10 @@ ul, ol {
 .post {
 
   ol, ul {
-    margin-bottom: 1em;
-    margin-left: 1em;
+    margin: {
+      bottom: 0.75em;
+      left: 1em;
+    }
 
     & > li {
       position: relative;
