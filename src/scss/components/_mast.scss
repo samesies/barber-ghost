@@ -7,4 +7,13 @@
   // &__title {
   //   @extend %font-header;
   // }
+
+  &__text {
+    margin: {
+      top: 0.5em;
+      bottom: 0;
+    }
+
+    font-size: 1.1em;
+  }
 }

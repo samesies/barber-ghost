@@ -8,16 +8,17 @@
   }
 
   &__date {
+    @extend %font-header;
 
-  }
+    display: block;
+    margin-top: 0.25em;
 
-  &__author {
-
+    font-size: $font-xsmall;
   }
 
   &__img {
     height: calc(100vh - 3em);
-    padding: 1em;
+    padding: 2em;
 
     border: {
       top: 1px solid rgba($color-black, 0.1);
@@ -35,10 +36,76 @@
   }
 
   &__content {
-    
+
+    img[src$="#full"] {
+      width: 100vw;
+      max-width: none;
+    }
+  }
+
+  &__social {
+    @extend %flex-center;
+    @extend %no-list-style;
+      
+    margin: {
+      top: 2em;
+      bottom: 0 !important;
+      left: 0 !important;
+    }
+
+    & > * {
+      margin-bottom: 0 !important;
+
+      &:not(:last-child) {
+        margin-right: 0.75em;
+      }
+    }
+
+    a {
+      font-size: 1.1em;
+      color: $color-darkgrey;
+    }
+  }
+
+  &__author {
+    @extend %font-header;
+
+    display: block;
+
+    a {
+      color: $color-black;
+      transition: color 200ms ease-in-out;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: darken($color-black, 5);
+      }
+    }
+  }
+
+  &__bio {
+    margin-bottom: 0;
   }
 
   &__comments {
-    
+    border-top: 1px solid rgba($color-black, 0.1);
+  }
+}
+
+//----------------------------------------------
+// Ghost
+//---------------------------------------------- 
+.kg-card-markdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > * {
+    min-width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

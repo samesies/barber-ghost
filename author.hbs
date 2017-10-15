@@ -1,0 +1,35 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- Everything inside the #author tags pulls data from the author --}}
+{{#author}}
+  <section class="mast section-padding">
+    <div class="grid-small">
+      <h2>{{name}}</h2>
+      {{#if bio}}
+        <p class="mast__text">{{bio}}</p>
+      {{/if}}
+    </div>
+  </section>
+{{/author}}
+
+<section class="section-padding--none">
+  <div class="grid-large">
+    <hr class="sep"/>
+  </div>
+</section>
+
+{{!-- The main content area --}}
+<section class="posts">
+  <div class="grid-large">
+    <div class="posts__container masonry">
+
+      {{#foreach posts}}
+
+        {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+        {{> post-card}}
+
+      {{/foreach}}
+    </div>
+  </div>
+</section>

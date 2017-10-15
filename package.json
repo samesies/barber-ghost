@@ -26,7 +26,6 @@
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
-    "barba.js": "^1.0.0",
     "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",

@@ -8,31 +8,55 @@ into the {body} of the default.hbs template --}}
 <section class="post {{post_class}}">
   <article>
     <div class="post__header section-padding">
-      <div class="grid">
-        {{!-- <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> --}}
-
+      <div class="grid-small">
         <h2>{{title}}</h2>
 
-        {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{!-- {{#author}}
-          <span class="post__author">{{name}}</span>
-        {{/author}} --}}
+        <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
       </div>
     </div>
 
     {{#if feature_image}}
       <div class="post__img">
-          <div>
-            <figure class="absolute-bg" style="background-image: url('{{feature_image}}');"></figure>
-          </div>
+        <div>
+          <figure class="absolute-bg" style="background-image: url('{{feature_image}}');"></figure>
+        </div>
       </div>
     {{/if}}
 
-    <div class="section-padding grid">
-      <div class="post__content">
+    <div class="post__content section-padding">
+      <div class="grid-small">
         {{content}}
+
+        <ul class="post__social">
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank"><i class="icon-facebook"></i></a></li>
+          <li><a href="https://twitter.com/intent/tweet?&text={{title}}+{{url absolute="true"}}{{#author}}+by+{{#if twitter}}{{twitter}}{{else}}{{name}}{{/if}}{{/author}}" target="_blank"><i class="icon-twitter"></i></a></li>
+          <li><a href="https://plus.google.com/share?url={{url absolute="true"}}" target="_blank"><i class="icon-google-plus"></i></a></li>
+          <li><a href="https://www.linkedin.com/shareArticle?mini=true&source={{title}}&summary={{meta_description}}&url={{url}}" target="_blank"><i class="icon-linkedin"></i></a></li>
+          <li><a href="https://www.stumbleupon.com/badge/?url={{url absolute="true"}}" target="_blank"><i class="icon-stumbleupon"></i></a></li>
+          <li><a href="https://www.reddit.com/submit?url={{url absolute="true"}}" target="_blank"><i class="icon-reddit-alien"></i></a></li>
+          <li><a href="https://www.tumblr.com/share/link?url={{url absolute="true"}}" target="_blank"><i class="icon-tumblr"></i></a></li>
+          <li><a href="https://www.pinterest.com/pin/create/link/?description={{meta_description}}&media={{feature_image}}&url={{url absolute="true"}}" target="_blank"><i class="icon-pinterest"></i></a></li>
+        </ul>
       </div>
     </div>
+
+    {{!-- Everything inside the #author tags pulls data from the author --}}
+    {{#author}}
+      <div class="section-padding--none">
+        <div class="grid">
+          <hr class="sep"/>
+        </div>
+      </div>
+
+      <div class="section-padding">
+        <div class="grid-small">
+          <span class="post__author">Posted by <a href="{{url}}" title="More By {{name}}">{{name}}</a></span>
+          {{#if bio}}
+            <p class="post__bio">{{bio}}</p>
+          {{/if}}
+        </div>
+      </div>
+    {{/author}}
 
     {{!--
 
@@ -40,20 +64,22 @@ into the {body} of the default.hbs template --}}
     The only thing you need to change is "test-apkdzgmqhj" - which
     should be replaced with your own Disqus site-id.
 
-    <div class="post__comments">
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-          this.page.url = '{{url absolute="true"}}';
-          this.page.identifier = 'ghost-{{comment_id}}';
-        };
-        (function() {
-          var d = document, s = d.createElement('script');
-          s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
+    <div class="post__comments section-padding">
+      <div class="grid-small">
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = '{{url absolute="true"}}';
+            this.page.identifier = 'ghost-{{comment_id}}';
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+      </div>
     </div>
     --}}
 
@@ -61,13 +87,13 @@ into the {body} of the default.hbs template --}}
 </section>
 
 {{!-- Links to Previous/Next posts --}}
-<section class="related section-padding">
-  <div class="grid-xlarge">
-    <h2 class="related__title">Related</h2>
-    <div class="related__container">
-      {{#if primary_tag}}
-        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3"}}
-          {{#if posts}}
+{{#if primary_tag}}
+  {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3"}}
+    {{#if posts}}
+      <section class="related section-padding">
+        <div class="grid-xlarge">
+          <h2 class="related__title">Related</h2>
+          <div class="related__container"> 
             {{#foreach posts}}
               <article class="related__post">
                 <a class="related__link" href="{{url}}">
@@ -82,11 +108,11 @@ into the {body} of the default.hbs template --}}
                 </a>
               </article>
             {{/foreach}}
-          {{/if}}
-        {{/get}}
-      {{/if}}
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
+    {{/if}}
+  {{/get}}
+{{/if}}
 
 {{/post}}

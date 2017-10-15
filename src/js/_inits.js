@@ -3,16 +3,17 @@
 //----------------------------------------------
 import Masonry from 'masonry-layout';
 import WOW from './vendor/_wow.js';
-import { miscFlexVid } from './components/_miscellaneous.js';
+import { miscFlexVid, socialShare } from './components/_miscellaneous.js';
 
 //----------------------------------------------
 // Inits
 //----------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
+  let msnry;
 
   // Masonry
   if (document.querySelectorAll('.masonry').length) {
-    const msnry = new Masonry('.masonry', {
+    msnry = new Masonry('.masonry', {
       // options...
       itemSelector: '.masonry-item',
     });
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inits
   wow.init();
-  miscFlexVid();
+  if (document.querySelectorAll('.post-template').length) {
+    miscFlexVid();
+    socialShare();
+  }
 
 });
