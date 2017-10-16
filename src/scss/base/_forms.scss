@@ -21,11 +21,17 @@ input, textarea {
   font-weight: 400;
   color: $color-black;
   background: transparent;
-  border: 1px solid $color-black;
+  border: 1px solid rgba($color-black, 0.6);
   border-radius: 0;
   box-shadow: none;
   outline: 0;
   -webkit-appearance: none;
+  transition: border-color 200ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: $color-black;
+  }
 }
 
 input[type="submit"] {

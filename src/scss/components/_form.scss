@@ -31,9 +31,9 @@
       height: 1px;
       width: 100%;
 
-      background-color: $color-alpha;
+      background-color: $color-black;
       transform: translate3d(-105%, 0, 0);
-      transition: transform 0.4s ease-in-out;
+      transition: transform 400ms ease-in-out;
     }
 
     &.js-form-active {
@@ -48,7 +48,7 @@
 
       font-size: 1em;
       border: 0;
-      border-bottom: 1px solid $color-black;
+      border-bottom: 1px solid rgba($color-black, 0.6);
     }
   }
 

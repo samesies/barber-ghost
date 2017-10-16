@@ -41,6 +41,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "masonry-layout": "^4.2.0"
+    "salvattore": "^1.0.9"
   }
 }

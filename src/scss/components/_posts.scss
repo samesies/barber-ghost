@@ -27,14 +27,33 @@
   }
 
   &__container {
-    @include flex-grid(1, 1, 2, 2, 3, $pad: 1em);
+    margin: {
+      right: -1em;
+      left: -1em;
+    }
+
+    &[data-columns]:before {
+      content: '1 .column.posts-full';
+
+      @media (min-width: $mq-med) {
+        content: '2 .column.posts-half';
+      }
+
+      @media (min-width: $mq-xlarge) {
+        content: '3 .column.posts-third';
+      }
+    }
+
+    &:after {
+      content: "";
+
+      display: table;
+      clear: both;
+    }
   }
 
   &__post {
-    padding: {
-      top: 2em;
-      bottom: 2em;
-    }
+    padding: 2em 1em;
 
     @media (min-width: $mq-small) {
       padding: {
@@ -113,4 +132,23 @@
 
     font-size: $font-small;
   }
+}
+
+//----------------------------------------------
+// Salvattore
+//---------------------------------------------- 
+.column { 
+  float: left;
+}
+
+.posts-full {
+  width: 100%;
+}
+
+.posts-half {
+  width: 50%;
+}
+
+.posts-third {
+  width: 1 / 3 * 100%;
 }

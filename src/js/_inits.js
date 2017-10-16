@@ -1,7 +1,7 @@
 // ----------------------------------------------
 // Imports
 // ----------------------------------------------
-import Masonry from 'masonry-layout';
+import salvattore from 'salvattore';
 import WOW from './vendor/_wow.js';
 import Formspree from './components/_formspree.js';
 import { miscFlexVid, socialShare } from './components/_miscellaneous.js';
@@ -11,15 +11,6 @@ import PageTransition from './components/_pageTransition.js';
 // Inits
 // ----------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  let msnry;
-
-  // Masonry
-  if (document.querySelectorAll('.masonry').length) {
-    msnry = new Masonry('.masonry', {
-      // options...
-      itemSelector: '.masonry-item',
-    });
-  }
 
   // WOW
   const wow = new WOW();
