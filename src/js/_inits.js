@@ -1,10 +1,9 @@
 // ----------------------------------------------
 // Imports
 // ----------------------------------------------
-import salvattore from 'salvattore';
 import WOW from './vendor/_wow.js';
 import Formspree from './components/_formspree.js';
-import { miscFlexVid, socialShare } from './components/_miscellaneous.js';
+import { miscFlexVid, miscSocialShare, miscInfiniteScroll } from './components/_miscellaneous.js';
 import PageTransition from './components/_pageTransition.js';
 
 // ----------------------------------------------
@@ -19,9 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   wow.init();
   PageTransition.init();
 
+  if (document.querySelectorAll('.posts').length) {
+    miscInfiniteScroll();
+  }
+
   if (document.querySelectorAll('.post-template').length) {
     miscFlexVid();
-    socialShare();
+    miscSocialShare();
   }
 
   if (document.getElementById('form')) {

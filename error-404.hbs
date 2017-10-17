@@ -12,14 +12,15 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 
   <title>{{meta_title}}</title>
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:400,700">
+  <link rel="stylesheet" href="{{asset "css/fonts.min.css"}}">
   <link rel="stylesheet" href="{{asset "css/app.min.css"}}">
 </head>
 <body class="error-template">
   {{> header}}
 
   <main role="main" class="💈">
-    <section class="mast bg-lightgrey section-padding">
+    <section class="mast section-padding">
       <div class="grid-small">
         <h2 class="color-alpha">{{code}}</h2>
         <p class="mast__text">The page does not exist.</p>

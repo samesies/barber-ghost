@@ -22,28 +22,7 @@ const Formspree = (() => {
     },
 
     bindEvents() {
-      this.focus();
       this.ajax();
-    },
-
-    focus() {
-      [].forEach.call(s.input, input => {
-        input.addEventListener('focus', e => {
-          e.target.parentNode.classList.add(s.formActive);
-        });
-        input.addEventListener('blur', e => {
-          e.target.parentNode.classList.remove(s.formActive);
-        });
-      });
-
-      [].forEach.call(s.textarea, textarea => {
-        textarea.addEventListener('focus', e => {
-          e.target.parentNode.classList.add(s.formActive);
-        });
-        textarea.addEventListener('blur', e => {
-          e.target.parentNode.classList.remove(s.formActive);
-        });
-      });
     },
 
     ajax() {

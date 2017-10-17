@@ -15,6 +15,14 @@
 }
 
 //----------------------------------------------
+// Fade Out
+//---------------------------------------------- 
+@keyframes fade-up {
+  0% { opacity: 0; transform: translate3d(0, 10px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+//----------------------------------------------
 // Animation Helper
 //---------------------------------------------- 
 .fade-in {
@@ -23,6 +31,10 @@
 
 .fade-out {
   animation: fade-out ease-in-out 600ms both;
+}
+
+.fade-up {
+  animation: fade-up ease-in-out 800ms both;
 }
 
 //----------------------------------------------

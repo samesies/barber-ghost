@@ -2,11 +2,10 @@
 // Posts
 //---------------------------------------------- 
 .posts {
-  padding: 4em 1em 2em;
+  padding: 2em 1em;
 
   @media (min-width: $mq-small) {
     padding: {
-      top: 6em;
       right: 2em;
       left: 2em;
     }
@@ -21,7 +20,7 @@
 
   @media (min-width: $mq-xlarge) {
     padding: {
-      top: 8em;
+      top: 4em;
       bottom: 4em;
     }
   }
@@ -61,24 +60,6 @@
         bottom: 4em;
       }
     }
-
-    &:nth-child(1) {
-      padding-top: 0;
-    }
-
-    &:nth-child(2) {
-
-      @media (min-width: $mq-med) {
-        padding-top: 0;
-      }
-    }
-
-    &:nth-child(3) {
-
-      @media (min-width: $mq-xlarge) {
-        padding-top: 0;
-      }
-    }
   }
 
   &__link {
@@ -106,7 +87,8 @@
   }
 
   &__content {
-    padding-top: 1.25em;    
+    width: 98%;
+    padding-top: 1.25em;
   }
 
   &__text {
@@ -128,9 +110,11 @@
   }
 
   &__next {
-    @include btn-split($color-black, $pad: 0.75em 1em);
+    // @include btn-split($color-black, $pad: 0.75em 1em);
+    @extend %font-header;
 
-    font-size: $font-small;
+    // font-size: $font-small;
+    cursor: pointer;
   }
 }
 

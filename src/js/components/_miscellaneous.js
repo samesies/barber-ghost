@@ -1,3 +1,5 @@
+import salvattore from 'salvattore';
+
 // ----------------------------------------------
 // Flex Vid
 // ---------------------------------------------- 
@@ -18,7 +20,7 @@ const miscFlexVid = () => {
 // ----------------------------------------------
 // Social Share
 // ---------------------------------------------- 
-const socialShare = () => {
+const miscSocialShare = () => {
   const socialArr = document.querySelectorAll('.post__social a');
 
   [].forEach.call(socialArr, social => {
@@ -31,47 +33,57 @@ const socialShare = () => {
 // ----------------------------------------------
 // Infinite Scroll
 // ---------------------------------------------- 
-// const miscInfiniteScroll = msnry => {
-//   var pathname = window.location.pathname.replace(/#(.*)$/g, '').replace('/\//g', '/');
+const miscInfiniteScroll = () => {
+  const container = document.querySelector('.posts__container');
+  let currentPage = 1;
+  const pathname = window.location.pathname.replace(/#(.*)$/g, '').replace('//g', '/');
 
-//   var isLoading = false;
+  let isLoading = false;
 
-//   // return if already loading
-//   if (isLoading) return;
+  function infiniteScroll() {
+    if (isLoading || currentPage === maxPages) {
+      return;
+    }
 
-//   // return if currentPage is the last page already
-//   if (currentPage === maxPages) return;
+    isLoading = true;
+    currentPage++;
 
-//   isLoading = true;
+    const nextPage = `${pathname}page/${currentPage}/`;
 
-//   // next page
-//   currentPage++;
+    fetch(nextPage).then(response => response.text()).then(text => {
+      const parse = document.createRange().createContextualFragment(text);
+      const posts = parse.querySelectorAll('.posts__post');
 
-//   // Load more
-//   var nextPage = `${pathname}page/${currentPage}/`;
+      if (posts.length) {
+        [].forEach.call(posts, post => {
+          post.classList.add('fade-up');
+          salvattore.appendElements(container, [post]);
+        });
+      }
 
-//   fetch(nextPage).then(response => response.text()).then(text => {
-//     var parse = document.createRange().createContextualFragment(text);
-//     var posts = parse.querySelectorAll('.posts__post');
+      isLoading = false;
+    }).catch(error => {
+      console.error(error);
+    });
 
-//     if (posts.length) {
-//       [].forEach.call(posts, post => {
-//         document.querySelector('.posts__container').appendChild(post);
-//         msnry.appended(post);
-//         msnry.layout();
-//       });
-//     }
+    isLoading = false;
 
-//     isLoading = false;
-//   }).catch(error => {
-//     console.error(error);
-//   });
-// };
+    if (currentPage === maxPages) {
+      const child = document.querySelector('.posts__pagination');
+      child.parentNode.removeChild(child);
+    }
+  }
+
+  document.querySelector('.posts__next').addEventListener('click', () => {
+    infiniteScroll();
+  });
+};
 
 // ----------------------------------------------
 // Exports
 // ----------------------------------------------
 module.exports = {
   miscFlexVid,
-  socialShare
+  miscSocialShare,
+  miscInfiniteScroll
 };

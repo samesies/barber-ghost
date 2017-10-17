@@ -1,6 +1,6 @@
 {
-  "name": "barber",
-  "description": "Barber is a blog theme for Ghost built using HTML, Sass, and JavaScript.",
+  "name": "barber-ghost",
+  "description": "Barber is a blog theme for Ghost built by Thomas Vaeth using HTML, Sass, and JavaScript.",
   "demo": "http://themes.thomasvaeth.com/barber",
   "version": "1.0.0",
   "engines": {
