@@ -110,11 +110,57 @@
   }
 
   &__next {
-    // @include btn-split($color-black, $pad: 0.75em 1em);
     @extend %font-header;
 
-    // font-size: $font-small;
+    position: relative;
+
     cursor: pointer;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+
+      margin: auto;
+
+      border-radius: 100%;
+      opacity: 0;
+      transition: opacity 200ms ease-in-out;
+    }
+
+    &:after {
+      height: 1.75em;
+      width: 1.75em;
+
+      border: 2px solid transparent;
+      border-top-color: $color-grey;
+      animation: spin 1s linear infinite both;
+    }
+
+    &:before {
+      height: 2.5em;
+      width: 2.5em;
+
+      border: 1px solid transparent;
+      border: {
+        top-color: $color-grey;
+        right-color: $color-grey;
+      }
+      animation: spin-reverse 1.2s linear infinite both;
+    }
+
+    &:hover {
+
+      &:before,
+      &:after {
+        opacity: 1;
+      }
+    }
   }
 }
 
