@@ -3,7 +3,8 @@
 // ----------------------------------------------
 import WOW from './vendor/_wow.js';
 import Formspree from './components/_formspree.js';
-import { miscFlexVid, miscSocialShare, miscInfiniteScroll } from './components/_miscellaneous.js';
+import InfiniteScroll from './components/_infiniteScroll.js';
+import { miscFlexVid, miscSocialShare } from './components/_miscellaneous.js';
 import PageTransition from './components/_pageTransition.js';
 
 // ----------------------------------------------
@@ -18,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   wow.init();
   PageTransition.init();
 
-  if (document.querySelectorAll('.posts').length) {
-    miscInfiniteScroll();
+  if (document.querySelector('.posts') && document.querySelector('.posts__next')) {
+    InfiniteScroll.init();
   }
 
-  if (document.querySelectorAll('.post-template').length) {
+  if (document.querySelector('.post-template')) {
     miscFlexVid();
     miscSocialShare();
   }

@@ -41,6 +41,7 @@ gulp.task('fonts', () => {
 gulp.task('lint', () => {
   return gulp.src([
     './src/js/components/_formspree.js',
+    './src/js/components/_infiniteScroll.js',
     './src/js/components/_miscellaneous.js',
     './src/js/components/_pageTransition.js',
     './kit/js/_inits.js'

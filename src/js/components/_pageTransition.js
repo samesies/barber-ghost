@@ -47,14 +47,10 @@ const PageTransition = (() => {
 
           const linkLocation = link.href;
 
-          function redirectPage() {
-            window.location = linkLocation;
-          }
-
           s.body.classList.add('js-page-exiting');
 
           setTimeout(() => {
-            redirectPage();
+            window.location = linkLocation;
           }, s.exit);
         });
       });
