@@ -32,13 +32,16 @@
     }
 
     &[data-columns]:before {
-      content: '1 .column.posts-full';
 
-      @media (min-width: $mq-med) {
+      @media screen and (max-width: $mq-med) {
+        content: '1 .column.posts-full';
+      }
+
+      @media screen and (min-width: $mq-med) and (max-width: $mq-xlarge) {
         content: '2 .column.posts-half';
       }
 
-      @media (min-width: $mq-xlarge) {
+      @media screen and (min-width: $mq-xlarge) {
         content: '3 .column.posts-third';
       }
     }

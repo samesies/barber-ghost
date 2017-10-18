@@ -61,12 +61,11 @@
       
     margin: {
       top: 2em;
-      bottom: 0 !important;
-      left: 0 !important;
+      bottom: 0;
+      left: 0;
     }
 
     & > * {
-      margin-bottom: 0 !important;
 
       &:not(:last-child) {
         margin-right: 0.75em;

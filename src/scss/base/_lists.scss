@@ -15,7 +15,7 @@ ul, ol {
 //----------------------------------------------
 .post {
 
-  ol, ul {
+  ol, ul:not(.post__social) {
     margin: {
       bottom: 0.75em;
       left: 1em;

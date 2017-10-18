@@ -30,14 +30,6 @@ gulp.task('amp', () => {
   .pipe(gulp.dest('./assets/css'));
 });
 
-gulp.task('fonts', () => {
-  return gulp.src('./src/scss/fonts.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(cleanCSS())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('./assets/css'));
-});
-
 gulp.task('lint', () => {
   return gulp.src([
     './src/js/components/_formspree.js',
@@ -62,10 +54,10 @@ gulp.task('browserify', () => {
   .pipe(gulp.dest('./assets/js'));
 });
 
-gulp.task('build', ['sass', 'amp', 'fonts', 'browserify']);
+gulp.task('build', ['sass', 'amp', 'browserify']);
 
 gulp.task('watch', () => {
-  gulp.watch('./src/scss/**/*.scss', ['sass', 'amp', 'fonts']);
+  gulp.watch('./src/scss/**/*.scss', ['sass', 'amp']);
   gulp.watch('./src/js/**/*.js', ['browserify']);
 });
 

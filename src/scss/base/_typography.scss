@@ -2,7 +2,7 @@
 // Base typography
 //---------------------------------------------- 
 body {
-  font-family: $font-body;
+  font-family: $font;
   line-height: $base-lineheight;
   color: $color-black;
   background-color: $color-white;
@@ -83,7 +83,7 @@ q, blockquote {
   }
   padding: 0.5em;
 
-  font-family: $font-header;
+  font-family: $font;
   font-weight: 400;
 
   font-size: 1.1em;
