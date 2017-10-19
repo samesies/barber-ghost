@@ -41,6 +41,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "salvattore": "^1.0.9"
+    "salvattore": "^1.0.9",
+    "whatwg-fetch": "^2.0.3"
   }
 }

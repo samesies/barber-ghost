@@ -17,8 +17,8 @@ gulp.task('sass', () => {
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
   .pipe(cleanCSS())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('./assets/css'));
+  .pipe(rename('styles-app.hbs'))
+  .pipe(gulp.dest('./partials'));
 });
 
 gulp.task('amp', () => {
@@ -26,8 +26,8 @@ gulp.task('amp', () => {
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
   .pipe(cleanCSS())
-  .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('./assets/css'));
+  .pipe(rename('styles-amp.hbs'))
+  .pipe(gulp.dest('./partials'));
 });
 
 gulp.task('lint', () => {

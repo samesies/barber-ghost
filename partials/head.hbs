@@ -7,7 +7,9 @@
 <title>{{meta_title}}</title>
 
 {{!-- Styles'n'Scripts --}}
-<link rel="stylesheet" type="text/css" href="{{asset "css/app.min.css"}}">
+<style type="text/css">
+  {{> styles-app}}
+</style>
 
 {{!-- This tag outputs SEO meta+structured data and other important settings --}}
 {{ghost_head}}

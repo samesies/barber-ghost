@@ -31,36 +31,24 @@ const Formspree = (() => {
       form.addEventListener('submit', e => {
         e.preventDefault();
 
-        const request = new XMLHttpRequest();
+        fetch(s.formAction, {
+          method: 'POST',
+          body: new FormData(form)
+        }).then(() => {
+          s.formMessage.classList.remove('fade-in');
 
-        request.open('POST', s.formAction, true);
-        request.setRequestHeader('accept', 'application/json');
+          setTimeout(() => {
+            s.formMessage.classList.add('fade-in');
+            s.formMessage.innerHTML = 'Message Sent';
 
-        const formData = new FormData(form);
-
-        request.send(formData);
-
-        request.onreadystatechange = () => {
-          if (request.readyState < 4) {
-            s.formMessage.classList.remove('fade-in');
-          } else if (request.readyState === 4) {
-            if (request.status === 200 && request.status < 300) {
-              setTimeout(() => {
-                s.formMessage.classList.add('fade-in');
-                s.formMessage.innerHTML = 'Message Sent';
-              }, 1000);
-
-              setTimeout(() => {
-                form.reset();
-              }, 3000);
-            } else {
-              setTimeout(() => {
-                s.formMessage.classList.add('fade-in');
-                s.formMessage.innerHTML = 'Something Went Wrong';
-              }, 1000);
-            }
-          }
-        };
+            form.reset();
+          }, 1000);
+        }).catch(() => {
+          setTimeout(() => {
+            s.formMessage.classList.add('fade-in');
+            s.formMessage.innerHTML = 'Something Went Wrong';
+          }, 1000);
+        });
       });
     }
   };

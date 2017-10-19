@@ -1,6 +1,7 @@
 // ----------------------------------------------
 // Imports
 // ----------------------------------------------
+import 'whatwg-fetch';
 import WOW from './vendor/_wow.js';
 import Formspree from './components/_formspree.js';
 import InfiniteScroll from './components/_infiniteScroll.js';
