@@ -24,6 +24,13 @@ pre {
     }
   }
 
+  .kg-card-markdown & {
+
+    @media (min-width: $mq-med) {
+      min-width: 110%;
+    }
+  }
+
   code {
     padding: 0;
   }

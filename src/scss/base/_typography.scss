@@ -81,14 +81,14 @@ q, blockquote {
     top: 1em;
     bottom: 1em;
   }
-  padding: 0.5em;
+  padding: 1em;
 
   font-family: $font;
   font-weight: 400;
 
-  font-size: 1.1em;
+  font-size: 1.25em;
   color: $color-black;
-  border-left: 2px solid $color-black;
+  border-left: 3px solid $color-black;
 
   p {
     margin-bottom: 0;
@@ -96,8 +96,8 @@ q, blockquote {
 
   @media (min-width: $mq-small) {
     padding: {
-      right: 2em;
-      left: 2em;
+      right: 1em;
+      left: 1.5em;
     }
   }
 }
@@ -110,8 +110,7 @@ cite {
 
   font-size: $font-xxsmall;
   font-style: normal;
-  color: $color-grey;
-  text-align: right;
+  color: $color-black;
 
   @media (min-width: $mq-med) {
     font-size: $font-xsmall;

@@ -48,11 +48,6 @@
 
   &__content {
     border-top: $border;
-
-    img[src$="#full"] {
-      width: 100vw;
-      max-width: none;
-    }
   }
 
   &__social {
@@ -161,6 +156,10 @@
     font-size: $font-small;
   }
 
+  p {
+    margin-bottom: 1em;
+  }
+
   a {
     color: $color-black;
     border-bottom: 2px solid $color-grey;
@@ -171,7 +170,7 @@
     height: 1px;
     width: 100%;
     margin: {
-      top: 0.75em;
+      top: 1em;
       bottom: 1.5em;
     }
 
@@ -179,11 +178,27 @@
     background-color: rgba($color-black, 0.1);
   }
 
-  img, iframe {
+  img {
     display: block;
     margin: {
       top: 0.5em;
-      bottom: 0.5em;
+      bottom: 0.75em;
+    }
+  }
+
+  img[src$="#full"] {
+    width: 100vw;
+    max-width: none;
+  }
+
+  .flex-vid {
+    margin: {
+      top: 0.25em;
+      bottom: 0.75em;
+    }
+
+    iframe {
+      display: block;
     }
   }
 }

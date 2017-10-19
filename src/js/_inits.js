@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     InfiniteScroll.init();
   }
 
-  if (document.querySelector('.post-template')) {
+  if (document.querySelector('.kg-card-markdown')) {
     miscFlexVid();
     miscSocialShare();
   }
