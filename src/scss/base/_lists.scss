@@ -21,7 +21,11 @@ ul, ol {
       left: 1em;
     }
 
-    font-size: 1.25em;
+    font-size: 1.1em;
+
+    @media (min-width: $mq-small) {
+      font-size: 1.25em;
+    }
 
     & > li {
       position: relative;

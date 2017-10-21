@@ -77,13 +77,21 @@ p {
 // Blockquote
 //---------------------------------------------- 
 q, blockquote {
-  margin: 0.75em 0 2em;
+  margin: 1.25rem 0 2rem;
 
   font-family: $font;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.25em;
   color: $color-black;
   line-height: 1.4;
+
+  @media (min-width: $mq-small) {
+    font-size: 1.5em;
+    margin: {
+      top: 1.75rem;
+      bottom: 2.5rem;
+    }
+  }
 }
 
 cite {

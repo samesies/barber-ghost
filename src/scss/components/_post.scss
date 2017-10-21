@@ -163,7 +163,11 @@
   p {
     margin-bottom: 1.25rem;
 
-    font-size: 1.25em;
+    font-size: 1.1em;
+
+    @media (min-width: $mq-small) {
+      font-size: 1.25em;
+    }
   }
 
   blockquote {
@@ -183,8 +187,8 @@
     height: 1px;
     width: 100%;
     margin: {
-      top: 2rem;
-      bottom: 2rem;
+      top: 0;
+      bottom: 1.25rem;
     }
 
     border: 0;
@@ -198,8 +202,15 @@
   img {
     display: block;
     margin: {
-      top: 2.5rem;
-      bottom: 2.5rem;
+      top: 1.5rem;
+      bottom: 1.5rem;
+    }
+
+    @media (min-width: $mq-small) {
+      margin: {
+        top: 2.5rem;
+        bottom: 2.5rem;
+      }
     }
   }
 
@@ -210,7 +221,7 @@
 
   .flex-vid {
     margin: {
-      top: 1.5rem;
+      top: 0.25rem;
       bottom: 1.5rem;
     }
 

@@ -11,7 +11,7 @@ pre {
     top: 0;
     bottom: 0;
   }
-  padding: 2em 0.5em;
+  padding: 2em 0.75em;
 
   line-height: 1.8;
   white-space: pre-wrap;
@@ -29,7 +29,7 @@ pre {
   }
 
   .kg-card-markdown & {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 
     @media (min-width: $mq-med) {
       min-width: 110%;
