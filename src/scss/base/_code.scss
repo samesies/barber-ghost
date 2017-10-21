@@ -7,6 +7,10 @@ code, kbd, pre, samp {
 }
 
 pre {
+  margin: {
+    top: 0;
+    bottom: 0;
+  }
   padding: 2em 0.5em;
 
   line-height: 1.8;
@@ -25,6 +29,7 @@ pre {
   }
 
   .kg-card-markdown & {
+    margin-bottom: 1rem;
 
     @media (min-width: $mq-med) {
       min-width: 110%;

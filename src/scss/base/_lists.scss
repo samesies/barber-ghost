@@ -17,9 +17,11 @@ ul, ol {
 
   ol, ul:not(.post__social) {
     margin: {
-      bottom: 0.75em;
+      bottom: 1.25rem;
       left: 1em;
     }
+
+    font-size: 1.25em;
 
     & > li {
       position: relative;
@@ -30,7 +32,13 @@ ul, ol {
       }
 
       &:not(:last-child) {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 0;
+
+        font-size: inherit;
       }
     }
   }

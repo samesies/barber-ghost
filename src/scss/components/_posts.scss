@@ -97,7 +97,7 @@
   &__text {
     margin-bottom: 0;
 
-    font-size: 1.1em;
+    font-size: 1.25em;
   }
 
   &__pagination {
@@ -157,7 +157,7 @@
       animation: spin-reverse 1.2s linear infinite both;
     }
 
-    &:hover {
+    &.js-posts-loading {
 
       &:before,
       &:after {

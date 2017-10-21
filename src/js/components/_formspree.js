@@ -9,7 +9,8 @@ const Formspree = (() => {
       return {
         body: document.body,
         formAction: document.getElementById('form').action,
-        formMessage: document.getElementsByClassName('form__message')[0]
+        formMessage: document.getElementsByClassName('form__message')[0],
+        animation: 'fade-in'
       };
     },
 
@@ -32,17 +33,14 @@ const Formspree = (() => {
           method: 'POST',
           body: new FormData(form)
         }).then(() => {
-          s.formMessage.classList.remove('fade-in');
+          s.formMessage.classList.remove(s.animation);
+          s.formMessage.classList.add(s.animation);
+          s.formMessage.innerHTML = 'Message Sent';
 
-          setTimeout(() => {
-            s.formMessage.classList.add('fade-in');
-            s.formMessage.innerHTML = 'Message Sent';
-
-            form.reset();
-          }, 750);
+          form.reset();
         }).catch(() => {
           setTimeout(() => {
-            s.formMessage.classList.add('fade-in');
+            s.formMessage.classList.add(s.animation);
             s.formMessage.innerHTML = 'Something Went Wrong';
           }, 750);
         });

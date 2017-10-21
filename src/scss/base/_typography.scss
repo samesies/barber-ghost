@@ -77,48 +77,27 @@ p {
 // Blockquote
 //---------------------------------------------- 
 q, blockquote {
-  margin: {
-    top: 1em;
-    bottom: 1em;
-  }
-  padding: 1em;
+  margin: 0.75em 0 2em;
 
   font-family: $font;
   font-weight: 400;
-
-  font-size: 1.25em;
+  font-size: 1.5em;
   color: $color-black;
-  border-left: 3px solid $color-black;
-
-  p {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: $mq-small) {
-    padding: {
-      right: 1em;
-      left: 1.5em;
-    }
-  }
+  line-height: 1.4;
 }
 
 cite {
   @extend %font-header;
 
   display: block;
-  margin-top: 0.25em;
 
-  font-size: $font-xxsmall;
+  font-size: $font-xxxsmall;
   font-style: normal;
   color: $color-black;
 
-  @media (min-width: $mq-med) {
-    font-size: $font-xsmall;
-  }
-
-  &:before {
-    content: "\2014 \0020";
-  }
+  // &:before {
+  //   content: "\2014 \0020";
+  // }
 }
 
 //----------------------------------------------
@@ -134,6 +113,18 @@ small {
 
 strong {
   font-weight: 700;
+}
+
+sup, sub {
+  font-size: $font-xxsmall;
+}
+
+sup {
+  top: -0.75em;
+}
+
+sub {
+  bottom: -0.75em;
 }
 
 mark {
