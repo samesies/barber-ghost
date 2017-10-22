@@ -1,7 +1,14 @@
 //----------------------------------------------
 // Media
 //----------------------------------------------
-img, svg, figure, picture, object, embed, iframe, video {
+img,
+svg,
+figure,
+picture,
+object,
+embed,
+iframe,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -43,7 +50,10 @@ iframe {
 
   overflow: hidden;
 
-  iframe, object, embed, video {
+  iframe,
+  object,
+  embed,
+  video {
     position: absolute;
     top: 0;
     left: 0;

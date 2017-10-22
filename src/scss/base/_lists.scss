@@ -5,7 +5,8 @@
   list-style-type: none;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
@@ -14,8 +15,8 @@ ul, ol {
 //  Post Lists
 //----------------------------------------------
 .post {
-
-  ol, ul:not(.post__social) {
+  ol,
+  ul:not(.post__social) {
     margin: {
       bottom: 1.25rem;
       left: 1em;
@@ -49,10 +50,10 @@ ul, ol {
 
   ol {
     @extend %no-list-style;
-    
+
     counter-reset: li;
 
-    & > li:before { 
+    & > li:before {
       content: counter(li) ".";
 
       counter-increment: li;

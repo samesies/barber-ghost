@@ -10,7 +10,21 @@ const eslint = require('gulp-eslint');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const source = require('vinyl-source-stream');
+const stylelint = require('gulp-stylelint');
 const uglify = require('gulp-uglify');
+
+gulp.task('stylelint', () => {
+  return gulp.src([
+    './src/scss/**/*.scss',
+    '!./src/scss/vendor/_normalize.scss',
+    '!./src/scss/fonts/*.scss'
+  ])
+  .pipe(stylelint({
+    reporters: [
+      {formatter: 'string', console: true}
+    ]
+  }));
+});
 
 gulp.task('sass', () => {
   return gulp.src('./src/scss/app.scss')

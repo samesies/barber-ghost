@@ -32,7 +32,6 @@
     }
 
     &[data-columns]:before {
-
       @media screen and (max-width: $mq-med) {
         content: '1 .column.posts-full';
       }
@@ -71,7 +70,6 @@
     color: $color-black;
 
     &:hover {
-
       .posts__img {
         transform: translate3d(0, -10px, 0);
       }
@@ -106,7 +104,7 @@
 
   &__pagination {
     @extend %text-center;
-  
+
     @media (min-width: $mq-small) {
       padding-bottom: 2em;
     }
@@ -162,7 +160,6 @@
     }
 
     &.js-posts-loading {
-
       &:before,
       &:after {
         opacity: 1;
@@ -174,7 +171,7 @@
 //----------------------------------------------
 // Salvattore
 //---------------------------------------------- 
-.column { 
+.column {
   float: left;
 }
 

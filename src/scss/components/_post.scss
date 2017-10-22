@@ -2,7 +2,6 @@
 // Post
 //---------------------------------------------- 
 .post {
-
   .amp-template & {
     background-color: $color-white;
   }
@@ -53,7 +52,7 @@
   &__social {
     @extend %flex-center;
     @extend %no-list-style;
-      
+
     margin: {
       top: 2em;
       bottom: 0;
@@ -69,7 +68,6 @@
     }
 
     & > * {
-
       &:not(:last-child) {
         margin-right: 0.75em;
       }
@@ -127,7 +125,12 @@
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 0.5rem;
   }
 
@@ -171,7 +174,6 @@
   }
 
   blockquote {
-
     p {
       margin-bottom: 0;
     }

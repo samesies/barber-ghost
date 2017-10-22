@@ -13,25 +13,31 @@ body {
 //---------------------------------------------- 
 body {
   font-size: 100%;
-  
+
   @media (min-width: $mq-small) {
     font-size: 102.5%;
   }
+
   @media (min-width: $mq-med) {
     font-size: 105%;
   }
+
   @media (min-width: $mq-large) {
     font-size: 107.5%;
   }
+
   @media (min-width: 75em) {
     font-size: 110%;
   }
+
   @media (min-width: $mq-xlarge) {
     font-size: 115%;
   }
+
   @media (min-width: $mq-xxlarge) {
     font-size: 120%;
   }
+
   @media (min-width: $mq-xxxlarge) {
     font-size: 125%;
   }
@@ -40,7 +46,12 @@ body {
 //----------------------------------------------
 // Headings
 //---------------------------------------------- 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @extend %font-header;
 
   margin: {
@@ -52,10 +63,11 @@ h1, h2, h3, h4, h5, h6 {
 //----------------------------------------------
 // H2 theme
 //---------------------------------------------- 
-h2, %font-h2 {
+h2,
+%font-h2 {
   $fontSize: 1.25em;
-  
-  font-size: $fontSize;  
+
+  font-size: $fontSize;
   line-height: 1.4;
 
   @media (min-width: $mq-xlarge) {
@@ -76,7 +88,8 @@ p {
 //----------------------------------------------
 // Blockquote
 //---------------------------------------------- 
-q, blockquote {
+q,
+blockquote {
   margin: 1.25rem 0 2rem;
 
   font-family: $font;
@@ -123,7 +136,8 @@ strong {
   font-weight: 700;
 }
 
-sup, sub {
+sup,
+sub {
   font-size: $font-xxsmall;
 }
 

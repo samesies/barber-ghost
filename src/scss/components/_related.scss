@@ -17,7 +17,6 @@
   }
 
   &__post {
-
     @media (max-width: $mq-small) {
       padding: {
         top: 2em;
@@ -42,7 +41,6 @@
     @extend .posts__link;
 
     &:hover {
-
       .related__img {
         transform: translate3d(0, -10px, 0);
       }

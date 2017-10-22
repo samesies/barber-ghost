@@ -7,7 +7,8 @@
   justify-content: center;
   flex-direction: column;
 
-  input, textarea {
+  input,
+  textarea {
     margin-bottom: 1.5em;
 
     font-size: 1em;
@@ -32,7 +33,7 @@
   }
 
   &__submit {
-    @extend %text-center; 
+    @extend %text-center;
   }
 
   &__btn {

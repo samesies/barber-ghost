@@ -27,7 +27,6 @@
 @import 'tools/_mixins-animations';
 @import 'tools/_mixins-grid';
 @import 'tools/_mixins-type';
-@import 'tools/_mixins';
 
 //----------------------------------------------
 // Tools: Extends
@@ -78,7 +77,5 @@
 //---------------------------------------------- 
 @import 'utils/_animations-keyframes';
 @import 'utils/_decor';
-@import 'utils/_helpers-colors';
-@import 'utils/_helpers-grid'; 
-@import 'utils/_helpers';
+@import 'utils/_helpers-grid';
 @import 'utils/_page-transitions';

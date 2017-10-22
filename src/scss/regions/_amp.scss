@@ -30,7 +30,6 @@
 }
 
 .header {
-
   &__title {
     @extend %font-header;
 
@@ -63,7 +62,7 @@
 //---------------------------------------------- 
 .footer-amp {
   background-color: $color-lightgrey;
-  
+
   &__container {
     padding: 2em 1em 1em;
 
@@ -109,11 +108,8 @@
   @extend %flex-center;
   @extend %no-list-style;
 
-  & > * {
-
-    &:not(:last-child) {
-      margin-right: 0.75em;
-    }
+  & > *:not(:last-child) {
+    margin-right: 0.75em;
   }
 
   a {
