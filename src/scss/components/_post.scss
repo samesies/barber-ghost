@@ -165,9 +165,9 @@
 
     font-size: 1.1em;
 
-    @media (min-width: $mq-small) {
-      font-size: 1.25em;
-    }
+    // @media (min-width: $mq-small) {
+    //   font-size: 1.25em;
+    // }
   }
 
   blockquote {
@@ -208,8 +208,8 @@
 
     @media (min-width: $mq-small) {
       margin: {
-        top: 2.5rem;
-        bottom: 2.5rem;
+        top: 2rem;
+        bottom: 2rem;
       }
     }
   }

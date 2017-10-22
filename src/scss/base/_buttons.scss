@@ -2,7 +2,7 @@
 // Buttons
 //---------------------------------------------- 
 button {
-  @include btn-split($color-black, $pad: 0.75em 1em);
+  @include btn-split($color-black, $color-black, 2px, 0.75em 1em);
 
   margin: 0;
 
