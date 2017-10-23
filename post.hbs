@@ -5,7 +5,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<section class="post {{post_class}}">
+<div class="post {{post_class}}">
   <article>
     <div class="post__header section-padding">
       <div class="grid-small">
@@ -52,7 +52,7 @@ into the {body} of the default.hbs template --}}
     {{> disqus}}
 
   </article>
-</section>
+</div>
 
 {{!-- Links to Previous/Next posts --}}
 {{#if primary_tag}}
