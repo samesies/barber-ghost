@@ -69,12 +69,12 @@ gulp.task('browserify', () => {
   .pipe(gulp.dest('./assets/js'));
 });
 
-gulp.task('distribute', () => {
+gulp.task('zip', () => {
   return gulp.src([
-    './*',
+    './**',
     '!./.DS_Store',
     '!./.git',
-    '!./node_modules'
+    '!./node_modules/**'
   ])
   .pipe(zip('barber-ghost.zip'))
   .pipe(gulp.dest('../'))

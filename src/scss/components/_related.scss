@@ -12,7 +12,8 @@
   &__container {
     @include flex-grid(1, 2, 3, $pad: 1em);
 
-    align-items: center;
+    align-items: flex-end;
+    justify-content: center;
     margin-top: 2em;
   }
 
