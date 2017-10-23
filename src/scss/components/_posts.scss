@@ -93,9 +93,8 @@
   }
 
   &__text {
-    margin-bottom: 0;
-
     font-size: 1.1em;
+    font-weight: 400;
 
     @media (min-width: $mq-small) {
       font-size: 1.25em;

@@ -67,11 +67,11 @@ into the {body} of the default.hbs template --}}
                 <a class="related__link" href="{{url}}">
                   {{#if feature_image}}
                     <figure class="related__img">
-                      <img src="{{feature_image}}"/>
+                      <img src="{{feature_image}}" alt="{{title}}"/>
                     </figure>
                   {{/if}}
                   <div class="related__content">
-                    <p class="related__text">{{title}}</p>
+                    <h2 class="related__text">{{title}}</h2>
                   </div>
                 </a>
               </article>
