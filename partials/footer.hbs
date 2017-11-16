@@ -33,12 +33,11 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 {{#if pagination.pages}}
-    <script>
-        var maxPages = parseInt('{{pagination.pages}}');
-    </script>
-    {{/if}}
+<script>
+  var maxPages = parseInt('{{pagination.pages}}');
+</script>
+{{/if}}
 
 <script type="text/javascript" src="{{asset "js/app.min.js"}}"></script>
 

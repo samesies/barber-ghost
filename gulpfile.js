@@ -51,7 +51,7 @@ gulp.task('lint', () => {
     './src/js/components/_infiniteScroll.js',
     './src/js/components/_miscellaneous.js',
     './src/js/components/_pageTransition.js',
-    './kit/js/_inits.js'
+    './src/js/_inits.js'
   ])
   .pipe(eslint())
   .pipe(eslint.format())

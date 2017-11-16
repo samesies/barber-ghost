@@ -1,7 +1,7 @@
 {
   "name": "barber-ghost",
-  "description": "Barber is a blog theme for Ghost built by Thomas Vaeth using HTML, Sass, and JavaScript.",
-  "demo": "http://themes.thomasvaeth.com/barber",
+  "description": "Barber is a blog theme for Ghost built by Thomas Vaeth at Samesies using HTML, Sass, and JavaScript.",
+  "demo": "http://barber.samesies.io",
   "version": "1.0.0",
   "engines": {
     "ghost": ">=1.2.0"
@@ -10,9 +10,9 @@
     "start": "gulp"
   },
   "author": {
-    "name": "Thomas Vaeth",
-    "email": "thomas.vaeth@gmail.com",
-    "url": "http://thomasvaeth.com"
+    "name": "Samesies",
+    "email": "okay@samesies.io",
+    "url": "http://samesies.io"
   },
   "keywords": [
     "barber",
