@@ -1,16 +1,26 @@
 // ----------------------------------------------
+// Imports
+// ----------------------------------------------
+import $ from 'jquery';
+
+// ----------------------------------------------
 // Formspree
-// ---------------------------------------------- 
+// ----------------------------------------------
 const Formspree = (() => {
   let s;
 
   return {
     settings() {
       return {
-        body: document.body,
-        formAction: document.getElementById('form').action,
-        formMessage: document.getElementsByClassName('form__message')[0],
-        animation: 'fade-in'
+        html: $('html'),
+        body: $('body'),
+        form: $('#form'),
+        formAction: $('#form').attr('action'),
+        formMessage: $('.form__message'),
+        animation: 'fade-in',
+        open: 'js-popup-open',
+        overflow: 'js-overflow',
+        closing: 'js-popup-closing'
       };
     },
 
@@ -24,25 +34,31 @@ const Formspree = (() => {
     },
 
     ajax() {
-      const form = document.getElementById('form');
-
-      form.addEventListener('submit', e => {
+      s.form.submit(e => {
         e.preventDefault();
 
-        fetch(s.formAction, {
+        $.ajax({
+          url: s.formAction,
           method: 'POST',
-          body: new FormData(form)
-        }).then(() => {
-          s.formMessage.classList.remove(s.animation);
-          s.formMessage.classList.add(s.animation);
-          s.formMessage.innerHTML = 'Message Sent';
+          data: s.form.serialize(),
+          dataType: 'json',
+          success: () => {
+            s.body.addClass(s.closing);
+            s.body.removeClass(s.open);
+            s.html.removeClass(s.overflow);
 
-          form.reset();
-        }).catch(() => {
-          setTimeout(() => {
-            s.formMessage.classList.add(s.animation);
-            s.formMessage.innerHTML = 'Something Went Wrong';
-          }, 750);
+            setTimeout(() => {
+              s.form[0].reset();
+              s.body.removeClass(s.closing);
+            }, 800);
+          },
+          error: () => {
+            setTimeout(() => {
+              s.formMessage.removeClass(s.animation);
+              s.formMessage.addClass(s.animation);
+              s.formMessage.text('Something Went Wrong');
+            }, 750);
+          }
         });
       });
     }

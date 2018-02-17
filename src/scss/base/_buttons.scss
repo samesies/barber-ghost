@@ -2,12 +2,12 @@
 // Buttons
 //---------------------------------------------- 
 button {
-  @include btn-split($color-black, $color-black, 2px, 0.75em 1em);
+  @include btn-split($color-white, $color-white, 2px, 0.75em 1em);
 
   margin: 0;
 
   font-family: $font;
-  font-weight: 400;
+  font-weight: 700;
   font-size: $font-small;
   background: transparent;
   border: 0;

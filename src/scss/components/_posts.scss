@@ -2,7 +2,7 @@
 // Posts
 //---------------------------------------------- 
 .posts {
-  padding: 2em 1em;
+  padding: 1em 1em 3em;
 
   @media (min-width: $mq-small) {
     padding: {
@@ -20,7 +20,7 @@
 
   @media (min-width: $mq-xlarge) {
     padding: {
-      top: 4em;
+      top: 2em;
       bottom: 4em;
     }
   }
@@ -56,12 +56,12 @@
   &__post {
     padding: 2em 1em;
 
-    @media (min-width: $mq-small) {
-      padding: {
-        top: 4em;
-        bottom: 4em;
-      }
-    }
+    // @media (min-width: $mq-small) {
+    //   padding: {
+    //     top: 4em;
+    //     bottom: 4em;
+    //   }
+    // }
   }
 
   &__link {
@@ -82,34 +82,24 @@
 
     img {
       display: block;
-
-      animation: fade-in ease-in-out 600ms both;
     }
   }
 
   &__content {
-    width: 98%;
-    padding-top: 1.25em;
+    padding-top: 1em;
   }
 
   &__text {
-    font-size: 1.1em;
-    font-weight: 400;
+    @extend %font-size;
 
-    @media (min-width: $mq-small) {
-      font-size: 1.25em;
-    }
+    font-weight: 400;
   }
 
   &__pagination {
     @extend %text-center;
 
     @media (min-width: $mq-small) {
-      padding-bottom: 2em;
-    }
-
-    @media (min-width: $mq-xlarge) {
-      padding-bottom: 4em;
+      padding-top: 1em;
     }
   }
 
@@ -117,6 +107,7 @@
     @extend %font-header;
 
     position: relative;
+    z-index: 1;
 
     cursor: pointer;
 

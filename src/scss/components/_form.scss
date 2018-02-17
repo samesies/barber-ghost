@@ -41,6 +41,10 @@
 
     display: inline-block;
 
+    .footer & {
+      @include btn-split($color-white, $color-white, 2px);
+    }
+
     input {
       padding: {
         right: 1em;
@@ -57,10 +61,10 @@
     @extend %font-header;
 
     margin: {
-      top: 2em;
+      top: 1em;
       bottom: 0;
     }
-    padding: 0.5em 1.5em;
+    padding: 0.5em 1em;
 
     background: $color-lightgrey;
     border-left: 2px solid $color-black;

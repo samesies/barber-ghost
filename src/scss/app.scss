@@ -13,7 +13,8 @@
 //----------------------------------------------
 // Fonts
 //---------------------------------------------- 
-@import 'fonts/_cabin';
+@import 'fonts/_roboto';
+@import 'fonts/_lora';
 @import 'fonts/_icons';
 
 //----------------------------------------------
@@ -54,6 +55,7 @@
 //----------------------------------------------   
 // Vendor
 //----------------------------------------------  
+@import 'vendor/_zoom';
 
 //----------------------------------------------
 // Regions
@@ -67,10 +69,12 @@
 @import 'components/_contact';
 @import 'components/_form';
 @import 'components/_mast';
+@import 'components/_popup';
 @import 'components/_post';
 @import 'components/_posts';
 @import 'components/_related';
 @import 'components/_subscribe';
+@import 'components/_zoom';
 
 //----------------------------------------------   
 // Utils
@@ -78,4 +82,5 @@
 @import 'utils/_animations-keyframes';
 @import 'utils/_decor';
 @import 'utils/_helpers-grid';
+@import 'utils/_helpers';
 @import 'utils/_page-transitions';

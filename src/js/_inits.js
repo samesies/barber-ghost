@@ -1,42 +1,42 @@
 // ----------------------------------------------
 // Imports
 // ----------------------------------------------
-import 'whatwg-fetch';
-import Promise from 'promise-polyfill';
-import WOW from './vendor/_wow.js';
+import $ from 'jquery';
+import AOS from 'aos';
+import './vendor/_transition.js';
+import './vendor/_zoom.js';
 import Formspree from './components/_formspree.js';
 import InfiniteScroll from './components/_infiniteScroll.js';
-import { miscFlexVid, miscSocialShare } from './components/_miscellaneous.js';
+import { miscFlexVid, miscZoom, miscSocialShare } from './components/_miscellaneous.js';
 import PageTransition from './components/_pageTransition.js';
+import Popup from './components/_popup.js';
 
 // ----------------------------------------------
 // Inits
 // ----------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Promise
-  if (!window.Promise) {
-    window.Promise = Promise;
-  }
-
-  // WOW
-  const wow = new WOW();
-
   // Inits
-  wow.init();
+  AOS.init({
+    duration: 600,
+    easing: 'ease-in-out',
+    once: true
+  });
   PageTransition.init();
 
-  if (document.querySelector('.posts') && document.querySelector('.posts__next')) {
+  if ($('.posts').length && $('.posts__next').length) {
     InfiniteScroll.init();
   }
 
-  if (document.querySelector('.kg-card-markdown')) {
+  if ($('.kg-card-markdown').length) {
     miscFlexVid();
+    miscZoom();
     miscSocialShare();
   }
 
-  if (document.getElementById('form')) {
+  if ($('#form').length) {
     Formspree.init();
+    Popup.init();
   }
 
 });

@@ -1,30 +1,38 @@
 // ----------------------------------------------
+// Imports
+// ----------------------------------------------
+import $ from 'jquery';
+
+// ----------------------------------------------
 // Flex Vid
-// ---------------------------------------------- 
+// ----------------------------------------------
 const miscFlexVid = () => {
-  const iframeArr = document.querySelectorAll('.post__content iframe');
+  const iframeArr = $('.post__content iframe');
 
-  [].forEach.call(iframeArr, iframe => {
-    const div = document.createElement('div');
+  iframeArr.each((idx, iframe) => {
+    $(iframe).wrap('<div class="flex-vid"></div>');
+  });
+};
 
-    div.className = 'flex-vid';
+// ----------------------------------------------
+// Zoom
+// ----------------------------------------------
+const miscZoom = () => {
+  const imgArr = $('.post__content img');
 
-    iframe.parentNode.insertBefore(div, iframe);
-    iframe.parentNode.removeChild(iframe);
-    div.appendChild(iframe);
+  imgArr.each((idx, img) => {
+    if (img.src.indexOf('full') === -1) {
+      $(img).attr('data-action', 'zoom');
+    }
   });
 };
 
 // ----------------------------------------------
 // Social Share
-// ---------------------------------------------- 
+// ----------------------------------------------
 const miscSocialShare = () => {
-  const socialArr = document.querySelectorAll('.post__social a');
-
-  [].forEach.call(socialArr, social => {
-    social.addEventListener('click', () => {
-      window.open(social.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=550,width=550');
-    });
+  $('.post__social a').on('click', e => {
+    window.open($(e.currentTarget).attr('href'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=550,width=550');
   });
 };
 
@@ -33,5 +41,6 @@ const miscSocialShare = () => {
 // ----------------------------------------------
 module.exports = {
   miscFlexVid,
+  miscZoom,
   miscSocialShare
 };

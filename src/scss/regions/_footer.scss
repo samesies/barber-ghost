@@ -2,8 +2,8 @@
 // Footer
 //---------------------------------------------- 
 .footer {
-  padding-top: 2em;
-
+  color: $color-white;
+  background-color: $color-black;
   border-top: $border;
 
   &__container {
@@ -16,20 +16,24 @@
 
     flex-wrap: wrap;
 
-    & > *:not(:last-child) {
-      margin-right: 1em;
+    & > * {
+      margin-bottom: 2em;
+
+      &:not(:last-child) {
+        margin-right: 1em;
+      }
     }
   }
 
   &__link {
     font-size: $font-small;
-    color: $color-grey;
+    color: $color-white;
     transition: color 200ms ease-in-out;
 
     &:hover,
     &:active,
     &:focus {
-      color: $color-black;
+      color: $color-grey;
     }
   }
 
@@ -37,15 +41,13 @@
     @extend %flex-center;
     @extend %no-list-style;
 
-    margin-top: 2em;
-
     & > *:not(:last-child) {
       margin-right: 0.75em;
     }
 
     a {
       font-size: 1.25em;
-      color: $color-darkgrey;
+      color: $color-white;
     }
   }
 }
@@ -60,6 +62,9 @@
 // }
 
 main {
+  position: relative;
+  // z-index: $z-1;
+
   // flex-grow: 1;
   margin-top: $header-height;
 }

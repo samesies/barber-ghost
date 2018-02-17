@@ -44,8 +44,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "promise-polyfill": "^6.0.2",
-    "salvattore": "^1.0.9",
-    "whatwg-fetch": "^2.0.3"
+    "aos": "^2.2.0",
+    "jquery": "2.2.4",
+    "salvattore": "^1.0.9"
   }
 }
