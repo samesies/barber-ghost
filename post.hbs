@@ -7,7 +7,7 @@ into the {body} of the default.hbs template --}}
 
 <div class="post {{post_class}}">
   <article>
-    <div class="post__header section-padding">
+    <div class="post__header section-padding--double">
       <div class="grid-small">
         <h2>{{title}}</h2>
 
@@ -24,7 +24,7 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 
     <div class="post__content section-padding">
-      <div class="grid-small">
+      <div class="grid">
         {{content}}
 
         {{> share}}

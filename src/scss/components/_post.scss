@@ -121,10 +121,10 @@
   flex-direction: column;
   align-items: center;
 
-  // .post-layout &,
-  // #style-guide & {
-  //   font-family: $font-post;
-  // }
+  .post-template &,
+  .page-style-guide & {
+    font-family: $font-post;
+  }
 
   & > * {
     min-width: 100%;
@@ -180,7 +180,7 @@
 
   h6 + hr {
 
-    #style-guide & {
+    .page-style-guide & {
       margin-top: 1rem;
     }
   }

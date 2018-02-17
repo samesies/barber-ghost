@@ -2,8 +2,13 @@
   <ul class="header__list">
     {{!-- Loop through the navigation items --}}
     {{#foreach navigation}}
-      <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+      <li>
+        <a href="{{url}}">{{label}}</a>
+      </li>
     {{/foreach}}
     {{!-- End the loop --}}
+    <li class="header__contact">
+      <span class="popup__open">Contact</span>
+    </li>
   </ul>
 </nav>

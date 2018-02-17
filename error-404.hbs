@@ -4,59 +4,28 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 --}}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{meta_title}}</title>
-  <style type="text/css">
-    {{> styles-app}}
-  </style>
+  {{> "head"}}
+
 </head>
-<body class="error-template">
-  {{> header}}
+<body class="{{body_class}}">
+
+  {{> "header"}}
 
   <main class="💈">
+
     <section class="mast section-padding--double">
       <div class="grid-small">
         <h2>{{code}}</h2>
         <p class="mast__text">This page does not exist.</p>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer section-padding">
-    <div class="grid">
-      {{#if @labs.subscribers}}
-        <div class="subscribe" id="subscribe">
-          <div class="subscribe__container">
-            <span class="subscribe__title">Subscribe</span>
-            <p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p>
-            {{subscribe_form placeholder="Email Address"}}
-          </div>
-        </div>
+  {{> "footer"}}
 
-        <hr class="sep--white"/>
-      {{/if}}
-
-      <div class="footer__container">
-        {{#get "tags" limit="5" order="count.posts DESC"}}
-          {{#if tags}}
-            <ul class="footer__tags">
-              {{#foreach tags}}
-                <li>
-                  <a class="footer__link" href="{{url}}">{{name}}</a>
-                </li>
-              {{/foreach}}
-            </ul>
-          {{/if}}
-        {{/get}}
-
-        {{> social}}
-      </div>
-    </div>
-  </footer>
 </body>
 </html>

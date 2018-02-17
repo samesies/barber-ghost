@@ -5,59 +5,28 @@ You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in 
 --}}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{meta_title}}</title>
-  <style type="text/css">
-    {{> styles-app}}
-  </style>
+  {{> "head"}}
+
 </head>
-<body class="error-template">
-  {{> header}}
+<body class="{{body_class}}">
+
+  {{> "header"}}
 
   <main class="💈">
-    <section class="mast section-padding">
+
+    <section class="mast section-padding--double">
       <div class="grid-small">
         <h2>{{code}}</h2>
         <p class="mast__text">The server had an error.</p>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer section-padding">
-    <div class="grid">
-      {{#if @labs.subscribers}}
-        <div class="subscribe" id="subscribe">
-          <div class="subscribe__container">
-            <span class="subscribe__title">Subscribe</span>
-            <p class="subscribe__text">Get a weekly email of posts I’ve added to the site.</p>
-            {{subscribe_form placeholder="Email Address"}}
-          </div>
-        </div>
+  {{> "footer"}}
 
-        <hr class="sep"/>
-      {{/if}}
-
-      <div class="footer__container">
-        {{#get "tags" limit="5" order="count.posts DESC"}}
-          {{#if tags}}
-            <ul class="footer__tags">
-              {{#foreach tags}}
-                <li>
-                  <a class="footer__link" href="{{url}}">{{name}}</a>
-                </li>
-              {{/foreach}}
-            </ul>
-          {{/if}}
-        {{/get}}
-
-        {{> social}}
-      </div>
-    </div>
-  </footer>
 </body>
 </html>

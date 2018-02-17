@@ -46,7 +46,7 @@
     & > * {
       @extend .header__title;
 
-      &:not(:last-child) {
+      &:not(:nth-last-child(-n+2)) {
         margin-right: 1em;
       }
 
@@ -54,6 +54,10 @@
         color: $color-black;
       }
     }
+  }
+
+  &__contact {
+    display: none;
   }
 }
 
