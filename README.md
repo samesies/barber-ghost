@@ -15,25 +15,26 @@ Barber is a minimal blog theme built for Ghost. The blog theme features a masonr
 
 ## Additional Development
 * [Source Code](#source-code)
+* [Donations](#donations)
 * [Support](#support)
 
 ### Installation
 Ghost requires the theme to be uploaded in a ````.zip```` file. You will need to do this whenever you make any edit to the source code. You can run ````gulp zip```` in your command line to generate this file without all the extra folders Ghost does not need (see [Source Code](#source-code) for more information about Gulp).
 
-![Installation](http://samesies.io/assets/images/barber/doc/installation.jpg "Installation")
+![Installation](http://samesies.io/assets/images/barber/doc/framed-installation.jpg "Installation")
 
 ### Enable Beta Features
 Barber uses a couple of features that are still in beta testing. You must activate the Public API and the Subscribers features. These features make tag pages, endless scrolling, and a subscription list possible.
 
-![Enable Beta Features](http://samesies.io/assets/images/barber/doc/beta-features.jpg "Enable Beta Features")
+![Enable Beta Features](http://samesies.io/assets/images/barber/doc/framed-beta-features.jpg "Enable Beta Features")
 
 ### Update Settings
-![Update Settings](http://samesies.io/assets/images/barber/doc/update-settings.jpg "Update Settings")
+![Update Settings](http://samesies.io/assets/images/barber/doc/framed-update-settings.jpg "Update Settings")
 
 ### Create Static Pages
 Creating a static page is the same as creating a story. The only difference is before the story is published it is turned into a page by selecting the checkbox at the very bottom of the post settings.
 
-![Static Pages](http://samesies.io/assets/images/barber/doc/static-pages.jpg "Static Pages")
+![Static Pages](http://samesies.io/assets/images/barber/doc/framed-static-pages.jpg "Static Pages")
 
 ### Create Navigation
 You can create a navigation under the Design Settings. Visitors can be linked directly to static pages right on the top of your website.
@@ -41,9 +42,9 @@ You can create a navigation under the Design Settings. Visitors can be linked di
 ***
 
 ### Contact Form
-Once you have created a static page for Contact and navigated to that page you will see a form. The form uses [Formspree](https://formspree.io/) to send submitted messages straight to your inbox.
+The form uses [Formspree](https://formspree.io/) to send submitted messages straight to your inbox. The image on the popup is the Publication Cover (see [Update Settings](#update-settings)).
 
-![Contact Form](http://samesies.io/assets/images/barber/cropped/contact-notebook.jpg "Contact Form")
+![Contact Form](http://samesies.io/assets/images/barber/doc/framed-contact-form.jpg "Contact Form")
 
 You do have to set the email address where you want to receive the form (you can even set the subject too). This file can be found in ````partials/formspree.hbs````. After everything is set you will need to submit a message yourself to confirm the email address is correct.
 
@@ -63,6 +64,7 @@ The source code is broken down to make finding what you need as easy as possible
 ├── assets
     └── js
 ├── partials
+|   ├── contact.hbs
 |   ├── disqus.hbs
 |   ├── footer.hbs
 |   ├── formspree.hbs
@@ -102,14 +104,22 @@ The source code is broken down to make finding what you need as easy as possible
 ├── gulpfile.js
 ├── index.hbs
 ├── package.json
-├── page-contact.hbs
 ├── page.hbs
 ├── post.hbs
+├── README.md
 ├── subscribe.hbs
 └── tag.hbs
 ```
 
-The CSS is written in Sass and compiled in two different files. One for the whole website and one for Google AMP pages. The JavaScript is written in ES6, so your code is up to date with the newest standards. This theme does not have jQuery, so you are saving every visitor from downloading that script.
+The CSS is written in Sass and compiled in two different files. One for the whole website and one for Google AMP pages. The JavaScript is written in ES6, so your code is up to date with the newest standards.
+
+### Donations
+Barber has been released for free. Similar themes cost around $39 on [ThemeForest](https://themeforest.net/category/blogging/ghost-themes). Any donations would be greatly appreciated after the work that went into releasing Barber.
+
+* PayPal – <https://www.paypal.me/samesies>
+* Bitcoin – 1PSzNmcfAFJY1PtBK5u9R5bTGfF7KAuLcq
+* Ethereum – 0x392F7116e4171F1D740397B6000EadD2e4bb9670
+* Litecoin – LSH9AnjcUTV5T7PUxXQuxPqb9W5aSR9GEP
 
 ### Support
 Email <okay@samesies.io> if you need any additional support with Barber.
