@@ -1,5 +1,7 @@
 # Barber
-Barber is a minimal blog theme built for Ghost. The blog theme features a masonry grid, endless scrolling, and page transitions. 💈
+Barber is a minimal blog theme built for Ghost. The blog theme features a masonry grid, endless scrolling, and page transitions. 💈 Barber is also available for [Jekyll](https://github.com/samesies/barber-jekyll).
+
+![Barber](https://github.com/samesies/barber-ghost/blob/master/barber.jpg "Barber")
 
 ## Initial Setup
 * [Installation](#installation)
