@@ -14,7 +14,7 @@ import Popup from './components/_popup.js';
 // ----------------------------------------------
 // Inits
 // ----------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
+$(() => {
 
   // Inits
   AOS.init({
