@@ -44,11 +44,11 @@ You can create a navigation under the Design Settings. Visitors can be linked di
 ***
 
 ### Contact Form
-The form uses [Formspree](https://formspree.io/) to send submitted messages straight to your inbox. The image on the popup is the Publication Cover (see [Update Settings](#update-settings)).
+The form uses [Formcarry](https://formcarry.com/) to send submitted messages straight to your inbox. The image on the popup is the Publication Cover (see [Update Settings](#update-settings)).
 
 ![Contact Form](http://samesies.io/assets/images/barber/doc/framed-contact-form.jpg "Contact Form")
 
-You do have to set the email address where you want to receive the form (you can even set the subject too). This file can be found in ````partials/formspree.hbs````. After everything is set you will need to submit a message yourself to confirm the email address is correct.
+You do have to set the URL where you want to receive the form. This file can be found in ````partials/formcarry.hbs````. After everything is set you will need to submit a message yourself to confirm the setup is correct.
 
 ### Social Media Links
 [Font Awesome](http://fontawesome.io/) is used for the social media icons. The icons in the theme can be found in ````partials/share.hbs```` and ````partials/social.hbs````. The icons in ````partials/share.hbs```` do not need to be edited unless you want to remove a certain website; however, the ones in ````partials/social.hbs```` do have to be changed. You can follow the template that has been provided for you to link to all of your social media accounts. The naming convention has not changed from the instructions provided on Font Awesome.
@@ -69,7 +69,7 @@ The source code is broken down to make finding what you need as easy as possible
 |   ├── contact.hbs
 |   ├── disqus.hbs
 |   ├── footer.hbs
-|   ├── formspree.hbs
+|   ├── formcarry.hbs
 |   ├── head.hbs
 |   ├── header.hbs
 |   ├── navigation.hbs

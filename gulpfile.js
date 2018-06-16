@@ -47,7 +47,7 @@ gulp.task('amp', () => {
 
 gulp.task('lint', () => {
   return gulp.src([
-    './src/js/components/_formspree.js',
+    './src/js/components/_formcarry.js',
     './src/js/components/_infiniteScroll.js',
     './src/js/components/_miscellaneous.js',
     './src/js/components/_pageTransition.js',
